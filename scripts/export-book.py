@@ -62,12 +62,12 @@ def validate_markdown(paths):
     if errors: raise SystemExit('Markdown-validering misslyckades:\n- '+'\n- '.join(errors))
 def run(cmd): print('+',' '.join(map(str,cmd))); subprocess.run(cmd,cwd=ROOT,check=True)
 def find_font_dir():
-    for base in (Path('/usr/share/fonts'),Path('/usr/local/share/fonts')):
+    for base in (Path('/usr/share/fonts'),Path('/usr/local/share/fonts'),Path('/usr/share/texmf'),Path('/usr/share/texlive')):
         if base.exists():
             for p in base.rglob('texgyrepagella-regular.otf'):
                 names=['texgyrepagella-regular.otf','texgyrepagella-bold.otf','texgyrepagella-italic.otf','texgyrepagella-bolditalic.otf']
                 if all((p.parent/n).is_file() for n in names): return p.parent
-    return None
+    raise SystemExit('TeX Gyre Pagella OTF-filer saknas; installera fonts-texgyre.')
 PDF_SIZES = {'170x240': ('170mm', '240mm'), 'a5': ('148mm', '210mm')}
 
 def pdf_size(meta):
