@@ -3,11 +3,11 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 61,
-  "parent_revision": 60,
+  "revision": 62,
+  "parent_revision": 61,
   "tracked_files": {
-    ".github/workflows/01-validate.yml": "ffceaa3acb55a2ad8fdf4a5aa54d3fac11984fe71eaa8497c53e5cf577e5ac75",
-    ".github/workflows/02-build-preview.yml": "3f932939795adc7c6d1a6021bcbde2712dcd9e2b4197a525eafcc708750d3f9d",
+    ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
+    ".github/workflows/02-build-preview.yml": "d899c9bf9a39f4c52237d12c7a3eb48ef87bd54905878b4a10b79cf33d18e569",
     ".github/workflows/03-release.yml": "6046139de132fa5f959b718c7ea08e05722f82d07f6f7afe937e6f3dc8898138",
     "README.md": "37724239b25ebe823cd12d876eab3bc3ba072ba1a53539a8b6715c2e163e281e",
     "assets/cover/README.md": "9e1b2607cf2c88febb1ae06f3f996248dc2f719d9834572985d98f18d34013cf",
@@ -94,12 +94,12 @@
     "publishing/pdf-template.tex": "096c7219814fe29d5e95b2aa5f27e5fc4e376626eec4aa346a4c863daba80d05",
     "publishing/pdf-filter.lua": "9c757c8715afb5893099b51cecfd7468db4d7b4a08c8a63989f6fed6c05e121c",
     "publishing/epub.css": "8016551bc5a88d2038f541bd128116eaf0deda049be24065adab956de34e9866",
-    "publishing/fix-epub-after-pandoc.py": "4d03058b8062f2eadce28b89cda56b1942f4dd605d35a01332ab89be282e1f08",
+    "publishing/fix-epub-after-pandoc.py": "5672117974861544b31945b170a3e2448bbc843bf9f7b5e58390c1304d856ddb",
     "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
     "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973",
     "scripts/validate_exports.py": "2bed75c2b92cd913908b0cd0c7e38924bde53ca153feebf8dd6f88ad4714dbb7"
   },
   "chapters": {},
-  "last_operation": "Kompletterat kanonisk export med verifiering och korrekta GitHub Actions-argument",
+  "last_operation": "Rättade syntax i EPUB-efterbearbetning och införde Python-syntaxkontroll i CI",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
