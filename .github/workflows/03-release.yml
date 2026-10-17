@@ -26,13 +26,13 @@ jobs:
           python3 scripts/validate_project.py
           python3 scripts/project_integrity.py verify
           python3 scripts/validate_references.py
-          python3 scripts/build_book.py
+          python3 scripts/build_book.py --output-dir exports
           mkdir -p dist
-          cp exports/*.pdf exports/*.epub exports/SHA256SUMS dist/
+          cp exports/*.pdf exports/*.epub exports/SHA256SUMS.txt dist/
       - uses: softprops/action-gh-release@v2
         with:
           files: |
             dist/*.pdf
             dist/*.epub
-            dist/SHA256SUMS
+            dist/SHA256SUMS.txt
           generate_release_notes: true
