@@ -1,75 +1,127 @@
 #!/usr/bin/env python3
-"""Exportera boken till EPUB och PDF i A5-format med godkänt omslag."""
-import argparse
-import shutil
-import subprocess
-import tempfile
-from pathlib import Path
+from __future__ import annotations
+import argparse, os, re, shutil, subprocess, tempfile
+from pathlib import Path, PurePosixPath
+ROOT=Path(__file__).resolve().parents[1]
+NUMBERED_CHAPTER_RE=re.compile(r'^\d{2}-[a-z0-9][a-z0-9-]*\.md$',re.I)
+PANDOC_VERSION='3.1.11.1'
 
-import yaml
+def scalar(text,key):
+    m=re.search(rf'(?m)^{re.escape(key)}:\s*(?:"([^"]*)"|\'([^\']*)\'|([^#\n]*))',text)
+    return next((g for g in m.groups() if g is not None),'').strip() if m else ''
+def read_book_yaml():
+    p=ROOT/'book.yaml'
+    if not p.is_file(): raise SystemExit('Saknar book.yaml')
+    return p.read_text(encoding='utf-8')
+def metadata(text):
+    keys=('title','subtitle','author','language','identifier','date','version','book_kind','book_type','cover_image','project_slug','subject','description','pdf_size')
+    v={k:scalar(text,k) for k in keys}; missing=[k for k in ('title','author','language','book_kind','book_type','project_slug') if not v[k]]
+    if missing: raise SystemExit('Saknad metadata i book.yaml: '+', '.join(missing))
+    if v['book_kind'] not in ('textbook','factbook'): raise SystemExit('Ogiltig book_kind: '+v['book_kind'])
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',v['project_slug']): raise SystemExit('project_slug måste vara gemen kebab-case')
+    return v
+def chapter_entries(text):
+    lines=text.splitlines(); start=None; base=0
+    for i,line in enumerate(lines):
+        m=re.match(r'^(\s*)chapters:\s*(?:#.*)?$',line)
+        if m: start=i+1; base=len(m.group(1)); break
+    if start is None: raise SystemExit('book.yaml saknar chapters:-lista')
+    out=[]
+    for line in lines[start:]:
+        if not line.strip() or line.lstrip().startswith('#'): continue
+        indent=len(line)-len(line.lstrip())
+        if indent<=base and not line.lstrip().startswith('-'): break
+        m=re.match(r'^\s*-\s*(?:"([^"]+)"|\'([^\']+)\'|([^#\n]+?))\s*(?:#.*)?$',line)
+        if not m: raise SystemExit('Ogiltig chapters-post: '+line.strip())
+        out.append(next(g for g in m.groups() if g is not None).strip())
+    if not out: raise SystemExit('chapters: är tom')
+    return out
+def resolve_chapters(text):
+    entries=chapter_entries(text)
+    if len(entries)!=len(set(entries)): raise SystemExit('Dubbellistade kapitel i book.yaml')
+    if not re.search(r'inledning|introduktion|preface|foreword',Path(entries[0]).stem,re.I): raise SystemExit('Första posten bör vara en inledning (filnamn med inledning/introduktion)')
+    paths=[]
+    for e in entries:
+        pure=PurePosixPath(e)
+        if pure.is_absolute() or '..' in pure.parts or len(pure.parts)!=2 or pure.parts[0]!='chapters': raise SystemExit('Ogiltig kapitelsökväg: '+e)
+        p=ROOT/pure.as_posix()
+        if not p.is_file(): raise SystemExit('Listad kapitelfil saknas: '+e)
+        if p.name.startswith('kapitelmall-'): raise SystemExit('Kapitelmall får inte exporteras: '+e)
+        paths.append(p)
+    listed={p.relative_to(ROOT).as_posix() for p in paths}; unlisted=[]
+    for p in sorted((ROOT/'chapters').glob('*.md')):
+        if not p.name.startswith('kapitelmall-') and p.relative_to(ROOT).as_posix() not in listed: unlisted.append(p.relative_to(ROOT).as_posix())
+    if unlisted: raise SystemExit('Markdownfiler saknas i book.yaml: '+', '.join(unlisted))
+    return paths
+def validate_markdown(paths):
+    errors=[]
+    for p in paths:
+        t=p.read_text(encoding='utf-8')
+        if re.search(r'(?m)^#{4,}\s',t): errors.append(p.name+': H4 eller djupare rubrik')
+        if t.count('```')%2: errors.append(p.name+': obalanserade kodblock')
+    if errors: raise SystemExit('Markdown-validering misslyckades:\n- '+'\n- '.join(errors))
+def run(cmd): print('+',' '.join(map(str,cmd))); subprocess.run(cmd,cwd=ROOT,check=True)
+def find_font_dir():
+    for base in (Path('/usr/share/fonts'),Path('/usr/local/share/fonts'),Path('/usr/share/texmf'),Path('/usr/share/texlive')):
+        if base.exists():
+            for p in base.rglob('texgyrepagella-regular.otf'):
+                names=['texgyrepagella-regular.otf','texgyrepagella-bold.otf','texgyrepagella-italic.otf','texgyrepagella-bolditalic.otf']
+                if all((p.parent/n).is_file() for n in names): return p.parent
+    raise SystemExit('TeX Gyre Pagella OTF-filer saknas; installera fonts-texgyre.')
+PDF_SIZES = {'170x240': ('170mm', '240mm'), 'a5': ('148mm', '210mm')}
 
-root = Path(__file__).resolve().parent.parent
-parser = argparse.ArgumentParser()
-parser.add_argument("--format", choices=["pdf", "epub", "all"], default="all")
-parser.add_argument("--version", default=None, help="Publicerad version, utan v-prefix")
-args = parser.parse_args()
-book = yaml.safe_load((root / "book.yaml").read_text(encoding="utf-8"))
-if not book.get("author") or book["author"] == "Ej fastställd":
-    raise SystemExit("Författare saknas.")
-if any("planerat men ännu inte skrivet" in (root / p).read_text(encoding="utf-8") for p in book["chapters"][1:]):
-    raise SystemExit("Minst ett kapitel är oskrivet.")
-if not shutil.which("pandoc"):
-    raise SystemExit("Pandoc saknas.")
-cover = root / book["cover_image"] if book.get("cover_image") else None
-if cover and not cover.is_file():
-    raise SystemExit("Omslagsbild saknas: " + str(cover))
-(root / "exports").mkdir(exist_ok=True)
-formats = ["pdf", "epub"] if args.format == "all" else [args.format]
-for fmt in formats:
-    output = root / "exports" / ("fran-monolit-till-mikrotjanster." + fmt)
-    command = [
-        "pandoc", *[str(root / p) for p in book["chapters"]],
-        "-o", str(output), "--metadata", "title:" + book["title"],
-        "--metadata", "subtitle:" + book.get("subtitle", ""),
-        "--metadata", "author:" + book["author"],
-        "--metadata", "lang:sv", "--metadata",
-        "version:" + (args.version or str(book.get("version", ""))),
-        "--toc", "--toc-depth=1"
-    ]
-    if fmt == "epub":
-        command += ["--split-level=1"]
-        if cover:
-            command += ["--epub-cover-image", str(cover)]
-        subprocess.run(command, check=True)
+def pdf_size(meta):
+    requested=meta.get('pdf_size', '').lower() or '170x240'
+    if requested not in PDF_SIZES:
+        raise SystemExit('pdf_size ska vara a5 eller 170x240')
+    return PDF_SIZES[requested]
+
+def export_metadata(text, tag):
+    if not tag: return text
+    if not re.fullmatch('v[0-9]+[.][0-9]+[.][0-9]+', tag):
+        raise SystemExit('Ogiltig releasetagg')
+    line = 'version: "' + tag[1:] + '"'
+    rows = text.splitlines()
+    for i, value in enumerate(rows):
+        if value.startswith('version:'):
+            rows[i] = line
+            break
     else:
-        for dep in ("xelatex", "pdfunite"):
-            if not shutil.which(dep):
-                raise SystemExit(dep + " saknas.")
-        command += [
-            "--pdf-engine=xelatex", "--top-level-division=chapter",
-            "-V", "documentclass:report", "-V", "classoption:oneside",
-            "-V", "papersize:a5", "-V", "geometry:margin=19mm",
-            "-V", "fontsize:10pt"
-        ]
-        with tempfile.TemporaryDirectory(prefix="book-export-") as folder:
-            tmp = Path(folder)
-            body = tmp / "body.pdf"
-            command[command.index(str(output))] = str(body)
-            subprocess.run(command, check=True)
+        rows.insert(0, line)
+    return chr(10).join(rows) + chr(10)
+
+def main()->int:
+    ap=argparse.ArgumentParser(); ap.add_argument('--format',choices=['epub','pdf','all'],default='all'); ap.add_argument('--output-dir',default=str(ROOT/'exports')); args=ap.parse_args()
+    if not shutil.which('pandoc'): raise SystemExit('Pandoc saknas')
+    text=read_book_yaml(); meta=metadata(text); chapters=resolve_chapters(text); validate_markdown(chapters)
+    effective_yaml=export_metadata(text,os.environ.get('BOOK_RELEASE_TAG'))
+    out=Path(args.output_dir).resolve(); out.mkdir(parents=True,exist_ok=True); slug=meta['project_slug']
+    with tempfile.TemporaryDirectory() as td:
+        td=Path(td); metadata_path=td/'book-metadata.yaml'; metadata_path.write_text(effective_yaml,encoding='utf-8'); from book_references import prepare
+        body=prepare(chapters); merged=td/'book.md'; merged.write_text(body,encoding='utf-8')
+        common=['pandoc',str(merged),'--from=markdown+pipe_tables+fenced_code_blocks+fenced_divs','--standalone','--metadata-file',str(metadata_path)]
+        if args.format in ('epub','all'):
+            epub=out/f'{slug}.epub'
+            cmd=['pandoc',str(merged),'--from=markdown+pipe_tables+fenced_code_blocks+fenced_divs','--to=epub3','--standalone','--toc','--toc-depth=1','--metadata-file',str(metadata_path),'--css',str(ROOT/'publishing/epub.css')]
+            cover=meta['cover_image'];
             if cover:
-                tex = tmp / "cover.tex"
-                tex.write_text(
-                    "\\documentclass[a5paper]{article}\n"
-                    "\\usepackage[margin=0pt]{geometry}\n"
-                    "\\usepackage{graphicx}\n"
-                    "\\pagestyle{empty}\n"
-                    "\\begin{document}\n"
-                    "\\noindent\\includegraphics[width=\\paperwidth,height=\\paperheight]{"
-                    + cover.resolve().as_posix() + "}\n"
-                    "\\end{document}\n", encoding="utf-8"
-                )
-                subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error", "cover.tex"], cwd=tmp, check=True, stdout=subprocess.DEVNULL)
-                subprocess.run(["pdfunite", str(tmp / "cover.pdf"), str(body), str(output)], check=True)
-            else:
-                shutil.copyfile(body, output)
-    print(output)
+                cp=ROOT/cover
+                if not cp.is_file(): raise SystemExit('Angiven omslagsbild saknas: '+cover)
+                cmd += ['--epub-cover-image',str(cp)]
+            run(cmd+['--output',str(epub)]); run([sys.executable,str(ROOT/'publishing/fix-epub-after-pandoc.py'),str(epub)])
+        if args.format in ('pdf','all'):
+            if not shutil.which('xelatex'): raise SystemExit('XeLaTeX saknas för PDF-export')
+            width,height=pdf_size(meta)
+            pdf=out/f'{slug}.pdf'; cmd=common+['--metadata',f'pdf-paper-width={width}','--metadata',f'pdf-paper-height={height}','--top-level-division=chapter','--pdf-engine=xelatex','--template',str(ROOT/'publishing/pdf-template.tex'),'--lua-filter',str(ROOT/'publishing/pdf-filter.lua')]
+            fontdir=find_font_dir()
+            if fontdir: cmd += ['--metadata',f'pdf-font-dir={fontdir.as_posix()}/']
+            cover=meta['cover_image']
+            if cover:
+                cp=ROOT/cover
+                if not cp.is_file(): raise SystemExit('Angiven omslagsbild saknas: '+cover)
+                cmd += ['--metadata',f'cover-image={cp.as_posix()}']
+            run(cmd+['--output',str(pdf)])
+    return 0
+if __name__=='__main__':
+    import sys
+    raise SystemExit(main())

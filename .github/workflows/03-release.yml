@@ -12,37 +12,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Check release tag
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
-        run: |
-          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
-      - name: Install Pandoc and PDF tools
+      - name: Install publishing dependencies
         run: |
           python3 -m pip install PyYAML
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-lang-european fonts-dejavu-core poppler-utils
+          sudo apt-get install -y texlive-xetex texlive-lang-european fonts-texgyre poppler-utils
           curl -fL --retry 3 -o /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-amd64.deb
           sudo dpkg -i /tmp/pandoc.deb
-      - name: Validate
+      - name: Build versioned release
+        env:
+          BOOK_RELEASE_TAG: ${{ github.ref_name }}
         run: |
           python3 scripts/validate_project.py
           python3 scripts/project_integrity.py verify
           python3 scripts/validate_references.py
-      - name: Export versioned PDF and EPUB
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
-        run: |
-          python3 scripts/export-book.py --format all --version "${RELEASE_TAG#v}"
+          python3 scripts/build_book.py --output-dir exports
           mkdir -p dist
-          cp exports/fran-monolit-till-mikrotjanster.pdf "dist/fran-monolit-till-mikrotjanster-${RELEASE_TAG}.pdf"
-          cp exports/fran-monolit-till-mikrotjanster.epub "dist/fran-monolit-till-mikrotjanster-${RELEASE_TAG}.epub"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: release-books-${{ github.ref_name }}
-          path: dist/*
-          if-no-files-found: error
+          cp exports/*.pdf exports/*.epub exports/SHA256SUMS.txt dist/
       - uses: softprops/action-gh-release@v2
         with:
-          files: dist/*
+          files: |
+            dist/*.pdf
+            dist/*.epub
+            dist/SHA256SUMS.txt
           generate_release_notes: true
