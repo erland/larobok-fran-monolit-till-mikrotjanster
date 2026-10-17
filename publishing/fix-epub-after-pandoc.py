@@ -17,7 +17,7 @@ def split_headings(base: Path)->int:
     for path in base.rglob('*.xhtml'):
         tree=ET.parse(path); changed=False
         for h1 in tree.getroot().findall('.//x:h1',NS):
-            text=''.join(h1.itertext()).strip(); m=pat.match(text) or re.match(r'^\s*Kapitel\s+(\d+):\s*(.+?)\s*
+            text=''.join(h1.itertext()).strip(); m=pat.match(text) or re.match(r'^\s*Kapitel\s+(\d+):\s*(.+?)\s*$', text, re.I)
             if not m: continue
             ident=h1.attrib.get('id'); h1.clear()
             if ident: h1.set('id',ident)
