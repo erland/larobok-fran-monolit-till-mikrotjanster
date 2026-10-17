@@ -58,8 +58,7 @@ def main()->int:
         with zipfile.ZipFile(epub) as z: z.extractall(base)
         opf=rootfile(base); headings=split_headings(base); nav=nav_non_linear(base,opf); repack(base,epub)
     validate(epub); print(f'Efterbearbetad EPUB: kapitelfiler={headings}, nav linear=no={nav}'); return 0
-if __name__=='__main__': raise SystemExit(main())
-,text,re.I)
+if __name__=='__main__': raise SystemExit(main()), text, re.I)
             if not m: continue
             ident=h1.attrib.get('id'); h1.clear()
             if ident: h1.set('id',ident)
