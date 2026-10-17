@@ -1,0 +1,49 @@
+title: Från monolit till mikrotjänster
+subtitle: Hur arkitektur, ansvar, utveckling, drift och förvaltning förändras
+author: Erland Lindmark
+language: sv
+book_kind: factbook
+book_type: technical_factbook
+difficulty: experienced
+audience: Erfarna medarbetare från applikationsutveckling respektive drift och infrastruktur
+edition: '1'
+version: 5.7.0
+date: '2026-10-17'
+rights: All rights reserved
+publisher: ''
+cover_image: assets/cover/omslag.png
+identifier: ''
+subject: Mikrotjänstarkitektur; IT-drift; IT-förvaltning; ansvar
+description: Jämförande, teknikneutral faktabok med två läsarperspektiv.
+project_slug: fran-monolit-till-mikrotjanster
+chapters:
+- chapters/00-inledning.md
+- chapters/01-det-valbekanta-it-stodet.md
+- chapters/02-nar-systemet-delas-upp.md
+- chapters/03-ansvar-i-distribuerat-system.md
+- chapters/04-hur-systemet-delas-upp.md
+- chapters/05-var-tjansterna-kors.md
+- chapters/06-hur-tjanster-kommunicerar.md
+- chapters/07-ansvar-for-information.md
+- chapters/08-utvecklingsmiljoer.md
+- chapters/09-testmiljoer-och-kvalitet.md
+- chapters/10-leverera-forandringar.md
+- chapters/11-gemensamma-plattformsformagor.md
+- chapters/12-nar-en-tjanst-fallerar.md
+- chapters/13-observerbarhet.md
+- chapters/14-incidenthantering.md
+- chapters/15-sakerhet-och-identitet.md
+- chapters/16-livscykler-och-underhall.md
+- chapters/17-aterstallning-kontinuitet-kostnad.md
+- chapters/18-ansvar-och-styrning.md
+- chapters/19-gamla-och-nya-arkitekturer.md
+- chapters/20-nar-mikrotjanster-ar-ratt.md
+exports:
+  epub:
+    enabled: true
+    include_text_toc: false
+    toc_depth: 1
+  pdf:
+    enabled: true
+    include_toc_before_introduction: true
+    toc_depth: 3
