@@ -3,11 +3,11 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 68,
-  "parent_revision": 67,
+  "revision": 69,
+  "parent_revision": 68,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
-    ".github/workflows/02-build-preview.yml": "fd735ed7b0c81dcdbc5602e4e002913e1eb7a1e15cc0a7ae6bee328aa22600db",
+    ".github/workflows/02-build-preview.yml": "b31a3dab42dae6920b1743581893cf0294b403167e3eb87ee3512e5e20ce9843",
     ".github/workflows/03-release.yml": "6046139de132fa5f959b718c7ea08e05722f82d07f6f7afe937e6f3dc8898138",
     "README.md": "37724239b25ebe823cd12d876eab3bc3ba072ba1a53539a8b6715c2e163e281e",
     "assets/cover/README.md": "9e1b2607cf2c88febb1ae06f3f996248dc2f719d9834572985d98f18d34013cf",
@@ -101,6 +101,6 @@
     "docs/slutgranskning-publicering-2026-10-17.md": "6baf9f95c4a4ba81e2d9454887169105e6b1bcdc7ffa0c333af25ae2ce67da76"
   },
   "chapters": {},
-  "last_operation": "Rättat PDF undertitelmetadata samt tabellrubriker i kapitel 2 inför publicering",
+  "last_operation": "Build Preview körs automatiskt vid PR för slutgranskning",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
