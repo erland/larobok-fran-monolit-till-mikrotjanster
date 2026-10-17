@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 65,
-  "parent_revision": 64,
+  "revision": 66,
+  "parent_revision": 65,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "d899c9bf9a39f4c52237d12c7a3eb48ef87bd54905878b4a10b79cf33d18e569",
@@ -91,15 +91,15 @@
     "scripts/project_integrity.py": "8dc1d3684bf4b1b899ee6abf8f806aca4391216cd0e210d72881a61054b587e7",
     "scripts/validate_project.py": "133617b3af958fc7d89915bc15cce363738490a6958f30350a2b5a6f00bb01f0",
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7",
-    "publishing/pdf-template.tex": "6075006956f0d66e75d0d806be860e7cd21e909498dae4d0af41b9e31c147a12",
+    "publishing/pdf-template.tex": "dd20af1dd09da1d22ae16e1c4bb6b49906899074f9acdf519fc3e9ba0410129e",
     "publishing/pdf-filter.lua": "9c757c8715afb5893099b51cecfd7468db4d7b4a08c8a63989f6fed6c05e121c",
-    "publishing/epub.css": "8016551bc5a88d2038f541bd128116eaf0deda049be24065adab956de34e9866",
+    "publishing/epub.css": "2177dd36360e3c9b8b816d116916994fa7cc86f76dc194186cd578c042c3aca3",
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
     "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
     "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973",
     "scripts/validate_exports.py": "2bed75c2b92cd913908b0cd0c7e38924bde53ca153feebf8dd6f88ad4714dbb7"
   },
   "chapters": {},
-  "last_operation": "Använder fasta sidmått i LaTeX geometry i stället för Pandoc metadata",
+  "last_operation": "PDF TOC endast huvudkapitel och onumrerade underrubriker; EPUB tvådelad kapitelrubrik",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
