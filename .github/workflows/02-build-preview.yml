@@ -18,6 +18,8 @@ jobs:
           sudo apt-get install -y texlive-xetex texlive-lang-european fonts-texgyre poppler-utils
           curl -fL --retry 3 -o /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-amd64.deb
           sudo dpkg -i /tmp/pandoc.deb
+      - name: Check Python syntax
+        run: python3 -m compileall -q scripts publishing
       - name: Validate
         run: |
           python3 scripts/validate_project.py
