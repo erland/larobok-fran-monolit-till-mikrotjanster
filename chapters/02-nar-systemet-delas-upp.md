@@ -80,7 +80,7 @@ Båda perspektiven möts i samma fråga: Vilka delar måste vara självständiga
 
 ## Vad förändras för vem?
 
-| Fråga | Applikationsperspektiv | Drift- och infrastrukturperspektiv | Gemensam utmaning |
+| Fråga | Applikation | Drift och infrastruktur | Gemensamt |
 |---|---|---|---|
 | Förändringar | Hantera kontrakt och kompatibilitet | Se faktisk version och konfiguration i drift | Leverera självständigt utan att bryta helheten |
 | Fel | Hantera väntan, avbrott och degraderat beteende | Knyta tekniska signaler till tjänsteberoenden | Förstå användarpåverkan vid partiella fel |
