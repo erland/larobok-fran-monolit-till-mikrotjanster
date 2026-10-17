@@ -3,12 +3,12 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 59,
-  "parent_revision": 58,
+  "revision": 60,
+  "parent_revision": 59,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "ffceaa3acb55a2ad8fdf4a5aa54d3fac11984fe71eaa8497c53e5cf577e5ac75",
-    ".github/workflows/02-build-preview.yml": "fa3411bf99956f98f228c6c500084399ab2da8f100fae267b5998c700d768b1f",
-    ".github/workflows/03-release.yml": "a10768ad37d68962655687fa6e96ed9952f22cfd0e756597d88b0799cdd851d0",
+    ".github/workflows/02-build-preview.yml": "301a101d9bfb3d24e266f5a5c4984958b27501435ae4dec4f5715cea81591c10",
+    ".github/workflows/03-release.yml": "d87bf87455376f0c24d801a15e9943f382365400a07e3523f5d223e5287ebe4f",
     "README.md": "37724239b25ebe823cd12d876eab3bc3ba072ba1a53539a8b6715c2e163e281e",
     "assets/cover/README.md": "9e1b2607cf2c88febb1ae06f3f996248dc2f719d9834572985d98f18d34013cf",
     "assets/cover/omslag.png": "1e6abef6adc39d7d6b57ef6585a22ca7120f01d3daa6f6dbe1666ea1bb7700fd",
@@ -87,12 +87,18 @@
     "project-index.md": "21bcb913ed5e069d898c501b141e49c21b2bc5eb8e3dd5c80d911e67deed1f67",
     "publishing/README.md": "91fba461b3e257cc1ad935dd179a500dc269facc928d79d572a2212d333b2d2d",
     "revision-log.md": "45010bf2f2f2dabc98681031e9e6145752e05aef2cd49ad4e05d5e2ee25c666b",
-    "scripts/export-book.py": "a998da0a8941f07933a8395c266b69023a0e68c7635b17212f4f184f4dcc2759",
+    "scripts/export-book.py": "4ec180a47444cdb39779d28d41b65035c4bb3959d3bdb7313e39eba46b72dd97",
     "scripts/project_integrity.py": "8dc1d3684bf4b1b899ee6abf8f806aca4391216cd0e210d72881a61054b587e7",
     "scripts/validate_project.py": "133617b3af958fc7d89915bc15cce363738490a6958f30350a2b5a6f00bb01f0",
-    "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7"
+    "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7",
+    "publishing/pdf-template.tex": "096c7219814fe29d5e95b2aa5f27e5fc4e376626eec4aa346a4c863daba80d05",
+    "publishing/pdf-filter.lua": "9c757c8715afb5893099b51cecfd7468db4d7b4a08c8a63989f6fed6c05e121c",
+    "publishing/epub.css": "8016551bc5a88d2038f541bd128116eaf0deda049be24065adab956de34e9866",
+    "publishing/fix-epub-after-pandoc.py": "4d03058b8062f2eadce28b89cda56b1942f4dd605d35a01332ab89be282e1f08",
+    "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
+    "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973"
   },
   "chapters": {},
-  "last_operation": "Åtgärdade CI samt exkluderade .git från integritetskontroll",
+  "last_operation": "Återställd kanonisk Lärobokskaparen-sättning för EPUB/PDF och CI",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
