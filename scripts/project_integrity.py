@@ -4,7 +4,7 @@ from pathlib import Path
 root=Path(__file__).resolve().parent.parent
 manifest=root/'project-manifest.json'
 def collect():
- return {str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(root.rglob('*')) if p.is_file() and p.name!='project-manifest.json' and '__pycache__' not in p.parts and not str(p.relative_to(root)).startswith('exports/')}
+ return {str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(root.rglob('*')) if p.is_file() and p.name!='project-manifest.json' and '.git' not in p.parts and '__pycache__' not in p.parts and not str(p.relative_to(root)).startswith('exports/')}
 def main():
  cmd=sys.argv[1] if len(sys.argv)>1 else 'verify'
  if cmd=='init':
