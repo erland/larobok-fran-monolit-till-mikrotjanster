@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 63,
-  "parent_revision": 62,
+  "revision": 64,
+  "parent_revision": 63,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "d899c9bf9a39f4c52237d12c7a3eb48ef87bd54905878b4a10b79cf33d18e569",
@@ -87,11 +87,11 @@
     "project-index.md": "21bcb913ed5e069d898c501b141e49c21b2bc5eb8e3dd5c80d911e67deed1f67",
     "publishing/README.md": "91fba461b3e257cc1ad935dd179a500dc269facc928d79d572a2212d333b2d2d",
     "revision-log.md": "45010bf2f2f2dabc98681031e9e6145752e05aef2cd49ad4e05d5e2ee25c666b",
-    "scripts/export-book.py": "4ec180a47444cdb39779d28d41b65035c4bb3959d3bdb7313e39eba46b72dd97",
+    "scripts/export-book.py": "8324321274c0e2bba820ffad9c47584d7faf381cf8447e90e848a3548303b7c0",
     "scripts/project_integrity.py": "8dc1d3684bf4b1b899ee6abf8f806aca4391216cd0e210d72881a61054b587e7",
     "scripts/validate_project.py": "133617b3af958fc7d89915bc15cce363738490a6958f30350a2b5a6f00bb01f0",
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7",
-    "publishing/pdf-template.tex": "096c7219814fe29d5e95b2aa5f27e5fc4e376626eec4aa346a4c863daba80d05",
+    "publishing/pdf-template.tex": "907f522b604a455758c180b4126b688ebefbfd96bd6caf07091f5e6fbf3580a1",
     "publishing/pdf-filter.lua": "9c757c8715afb5893099b51cecfd7468db4d7b4a08c8a63989f6fed6c05e121c",
     "publishing/epub.css": "8016551bc5a88d2038f541bd128116eaf0deda049be24065adab956de34e9866",
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
@@ -100,6 +100,6 @@
     "scripts/validate_exports.py": "2bed75c2b92cd913908b0cd0c7e38924bde53ca153feebf8dd6f88ad4714dbb7"
   },
   "chapters": {},
-  "last_operation": "Tog bort dubblettfragment i EPUB-postprocessor efter Python syntax check",
+  "last_operation": "Fix XeLaTeX typsnittssökväg till TeX Gyre Pagella",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
