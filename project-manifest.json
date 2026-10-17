@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 67,
-  "parent_revision": 66,
+  "revision": 68,
+  "parent_revision": 67,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "fd735ed7b0c81dcdbc5602e4e002913e1eb7a1e15cc0a7ae6bee328aa22600db",
@@ -17,7 +17,7 @@
     "book.yaml": "cedfa83a43cf729d9f82e0078956ff303cb71faa078790238d0f8a096f884821",
     "chapters/00-inledning.md": "7788d4fe6d7d63f5f5efd63d33d747c9eea7322053dfbd1a02e41c8c13dccdb4",
     "chapters/01-det-valbekanta-it-stodet.md": "69f27f2fa7b17e28415cfe28e479c40d624ce28b3b3ee8264f93a8d5328dbfb6",
-    "chapters/02-nar-systemet-delas-upp.md": "86be9762182854462ea73c1eb7dd539267ed4fdfb7ff741d3820060516e255ec",
+    "chapters/02-nar-systemet-delas-upp.md": "f2e45624e1f1355abab4c6cb57c2662bcf28f1a46fa546eb1e52d0f531233955",
     "chapters/03-ansvar-i-distribuerat-system.md": "da1e85413c75240e84ddcc1e64be4883aa81b8bfdd52dc997b962ecb2cfc01ba",
     "chapters/04-hur-systemet-delas-upp.md": "a9a2fdfdd8bcb73a0061226a39c5f58d66a8c0b5d7371d1e7db630584e0b669f",
     "chapters/05-var-tjansterna-kors.md": "9a1a8ed2e829f39b9de4c59e3888f2cb8f1ae398ebce630c706e864b6f926e5d",
@@ -91,7 +91,7 @@
     "scripts/project_integrity.py": "8dc1d3684bf4b1b899ee6abf8f806aca4391216cd0e210d72881a61054b587e7",
     "scripts/validate_project.py": "133617b3af958fc7d89915bc15cce363738490a6958f30350a2b5a6f00bb01f0",
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7",
-    "publishing/pdf-template.tex": "d05bb171744f79337ad8c391099072e776fb5d01b7c986d8329e6fb954f129c4",
+    "publishing/pdf-template.tex": "83b34664f86cd251715c9e941953fb8476d6e43a24fa7085bcbf87baba129d84",
     "publishing/pdf-filter.lua": "31c57369f4d0fe1993af4e3f0b4f3d8d6172d5f116e3d7480f0f075a25fd9e38",
     "publishing/epub.css": "2177dd36360e3c9b8b816d116916994fa7cc86f76dc194186cd578c042c3aca3",
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
@@ -101,6 +101,6 @@
     "docs/slutgranskning-publicering-2026-10-17.md": "6baf9f95c4a4ba81e2d9454887169105e6b1bcdc7ffa0c333af25ae2ce67da76"
   },
   "chapters": {},
-  "last_operation": "Publiceringsgranskning, PDF-metadata, lokalt sidbrytningsförsök och metadata-kontroll i preview",
+  "last_operation": "Rättat PDF undertitelmetadata samt tabellrubriker i kapitel 2 inför publicering",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
