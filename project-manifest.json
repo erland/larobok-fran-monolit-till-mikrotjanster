@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 58,
-  "parent_revision": 57,
+  "revision": 59,
+  "parent_revision": 58,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "ffceaa3acb55a2ad8fdf4a5aa54d3fac11984fe71eaa8497c53e5cf577e5ac75",
     ".github/workflows/02-build-preview.yml": "fa3411bf99956f98f228c6c500084399ab2da8f100fae267b5998c700d768b1f",
@@ -88,11 +88,11 @@
     "publishing/README.md": "91fba461b3e257cc1ad935dd179a500dc269facc928d79d572a2212d333b2d2d",
     "revision-log.md": "45010bf2f2f2dabc98681031e9e6145752e05aef2cd49ad4e05d5e2ee25c666b",
     "scripts/export-book.py": "a998da0a8941f07933a8395c266b69023a0e68c7635b17212f4f184f4dcc2759",
-    "scripts/project_integrity.py": "008456dc9a17da621cf583a93abd58d1ba827bb57805240082787f8b99e26df0",
+    "scripts/project_integrity.py": "8dc1d3684bf4b1b899ee6abf8f806aca4391216cd0e210d72881a61054b587e7",
     "scripts/validate_project.py": "133617b3af958fc7d89915bc15cce363738490a6958f30350a2b5a6f00bb01f0",
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7"
   },
   "chapters": {},
-  "last_operation": "Åtgärdade CI, README och omslagsexport i PR #1",
+  "last_operation": "Åtgärdade CI samt exkluderade .git från integritetskontroll",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
