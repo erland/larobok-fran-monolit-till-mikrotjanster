@@ -27,6 +27,12 @@ jobs:
           python3 scripts/validate_references.py
       - name: Build styled book
         run: python3 scripts/build_book.py --output-dir exports
+      - name: Verify PDF document metadata
+        run: |
+          pdfinfo exports/fran-monolit-till-mikrotjanster.pdf > /tmp/book-pdfinfo.txt
+          cat /tmp/book-pdfinfo.txt
+          grep -Eq '^Title: +Från monolit till mikrotjänster' /tmp/book-pdfinfo.txt
+          grep -Eq '^Author: +Erland Lindmark' /tmp/book-pdfinfo.txt
       - uses: actions/upload-artifact@v4
         with:
           name: book-preview-${{ github.sha }}
