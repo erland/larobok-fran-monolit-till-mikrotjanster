@@ -4,11 +4,37 @@ on:
 jobs:
   preview:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install PyYAML
-      - run: python3 scripts/validate_project.py
-      - run: echo 'Export aktiveras när kapiteltext, omslagsval och författare är färdiga.'
+      - name: Install Pandoc and PDF tools
+        run: |
+          python3 -m pip install PyYAML
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-lang-european fonts-dejavu-core poppler-utils
+          curl -fL --retry 3 -o /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-amd64.deb
+          sudo dpkg -i /tmp/pandoc.deb
+      - name: Validate
+        run: |
+          python3 scripts/validate_project.py
+          python3 scripts/project_integrity.py verify
+          python3 scripts/validate_references.py
+      - name: Build PDF and EPUB including cover
+        run: python3 scripts/export-book.py --format all
+      - name: Check exports
+        run: |
+          test -s exports/fran-monolit-till-mikrotjanster.pdf
+          test -s exports/fran-monolit-till-mikrotjanster.epub
+          pdfinfo exports/fran-monolit-till-mikrotjanster.pdf
+          python3 -c "import zipfile; z=zipfile.ZipFile('exports/fran-monolit-till-mikrotjanster.epub'); assert z.testzip() is None"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book-preview-${{ github.sha }}
+          path: |
+            exports/fran-monolit-till-mikrotjanster.pdf
+            exports/fran-monolit-till-mikrotjanster.epub
+          if-no-files-found: error
