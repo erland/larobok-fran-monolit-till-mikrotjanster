@@ -175,3 +175,17 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Sammanhållen efterkontroll: rättat kongruensen efter ändringen till en programvaruförteckning i singular.
 - Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## Samlad efterkontroll och källregister
+
+- Samtliga 21 manusdelar har lästs i ordning, med 59 riktade justeringar i första genomgången och fem mindre rättningar vid gemensam efterkontroll. Varje kapitelsteg har egen commit och egen integritetsverifierad projektrevision.
+- Inledning, tabeller, övergångar, slutord och samtliga källavsnitt ingår. Granskningen hittade både språkliga fel och tekniska precisionsproblem, inte bara formalia.
+- Målgrupp, omfattning, kapitelordning, omslag och befintliga käll-ID har bevarats. Inga interna illustrationer eller nya kapitel har skapats.
+- Källregistret har lästs och kapitelkolumnen rättats för källor som förekommer i flera kapitel. R1 hör till inledningen och kapitel 1, 2 och 4; R2 till kapitel 2 och 3. Övriga poster har också stämts av.
+- Den nya förklaringen om ogenomskinliga token har kompletterande primärkällstöd i IETF RFC 7662, https://www.rfc-editor.org/rfc/rfc7662.html, kontrollerad 2026-10-18. Distinktionen kontinuerlig leverans/automatisk produktionssättning har kontrollerats mot R11 samma datum.
+- Sökning efter separat rubricerade redaktionella granskningsavsnitt, TODO/FIXME och formuleringarna ”inför publicering” respektive ”det fortsatta bokarbetet” gav inga träffar i de exporterade manuskapitlen. Kontextuell slutläsning har också utförts; legitim vägledning till läsaren och organisationen har bevarats.
+- README, projektstatus, projektindex och bokspecifikation har uppdaterats; historiska arbetsnoteringar och granskningsprotokoll har bevarats och märkts som historik.
+### Efterkontroll – 11. Vem tillhandahåller miljöer och gemensamma förmågor? – revision 95
+
+- Provexportens korta kapitelavslut har åtgärdats genom att koncentrera två upprepande slutstycken. Samtliga sakkrav om undantag, resursgränser, självständighet och plattformskontrakt bevaras.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

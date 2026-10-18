@@ -70,9 +70,9 @@ För driftsidan innebär detta en förskjutning från att utföra samma manuella
 
 Vi återvänder till ärendehanteringssystemet. Dokumentteamet vill starta en tillfällig utvecklingsmiljö för en ny förhandsvisningsfunktion. Teamet väljer en godkänd miljötyp och beskriver vilken tjänsteversion, databasprofil och resursnivå som behövs. Plattformen kontrollerar kvot, identitet och nätverkspolicy, skapar resurser och kopplar på standardövervakning. Miljön får ett ägarskap, en kostnadsmarkering och en regel för automatisk avveckling.
 
-Om dokumenttjänsten behöver kommunicera med ärendetjänsten över en otillåten zon ska plattformen inte tyst öppna trafiken. Den ska ge en begriplig felrapport och hänvisa till ett beslutat undantagsflöde. På samma sätt ska dokumentteamet inte försöka kringgå resursgränser genom dolda manuella ändringar. Det är just samspelet mellan standardiserad frihet och synliga ansvar som gör lösningen förvaltningsbar.
+Otillåten trafik ska ge en begriplig felrapport och hänvisning till det beslutade undantagsflödet, inte en automatisk öppning. Dokumentteamet ska följa samma princip för resursgränser: avvikelser hanteras öppet, utan dolda manuella ändringar.
 
-Kapitlets viktigaste slutsats är att självständiga mikrotjänster inte kräver att varje utvecklingsteam driver sin egen infrastruktur. De kräver en **tydlig relation mellan tjänstens krav och plattformens erbjudande**. När den relationen fungerar kan både utveckling och drift arbeta mer självständigt utan att verksamhetens helhet tappas bort.
+Självständiga mikrotjänster kräver inte att varje utvecklingsteam driver sin egen infrastruktur. De kräver en **tydlig relation mellan tjänstens krav och plattformens erbjudande**, med ansvar som håller ihop verksamhetens IT-stöd.
 
 ### Källor och vidare läsning
 
