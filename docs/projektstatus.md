@@ -1,5 +1,21 @@
 # Projektstatus
 
+**Aktuell projektrevision: 98. Manusversion i book.yaml: 5.7.0.**
+
+- Fas: kapitelvis redaktionell slutläsning genomförd; publiceringskontroll pågår.
+- Inledning och kapitel 1–20: genomlästa i ordning och justerade, revision 69–89; sammanhållen efterkontroll och koncentration efter provexport i revision 90–97.
+- Målgrupper: erfarna medarbetare inom applikationsutveckling respektive drift och infrastruktur.
+- Granskningsprotokoll: `docs/slutlasning-kapitelvis-2026-10-18.md`.
+- Källor: tidigare fem avgränsade granskningsetapper och referensintegration finns dokumenterade. Denna slutläsning kompletterar dem med riktad källkontroll; en heltäckande ny faktagranskning påstås inte.
+- Omslag: godkänt och inlagt i projektet. Inga inre illustrationer har producerats.
+- Export: nytt lokalt provbygge med Pandoc 3.1.11.1 och XeLaTeX är godkänt i strukturkontrollerna. PDF: 144 sidor, korrekta metadata och 21 kapitelbokmärken. EPUB: 21 navigeringsposter och 20 tvådelade kapitelrubriker. Visuella PDF-stickprov är dokumenterade. Äldre incheckade exportfiler är inte leveranser av denna revision.
+- Publiceringsgodkännande: ännu inte givet. Se verifieringsutfall och kvarstående kontroller i slutläsningsprotokollet.
+- Nästa steg: granska den gemensamma PR:en, färdigställ läsarkontroll av PDF/EPUB och fatta därefter publiceringsbeslut.
+
+## Historiska arbetsnoteringar till och med revision 57
+
+Nedan bevaras tidigare statusnoteringar för spårbarhet. Uppgifter om återstående kapitel, omslag och källintegration beskriver respektive tidigare tidpunkt; aktuell status anges ovan.
+
 - Fas: systematisk extern faktagranskning påbörjad (revision 44); första källkontrollsetet för inledning och kapitel 1–4 dokumenterat, övrig faktakontroll och publiceringsbearbetning återstår.
 - Disposition: version 4, 6 delar, 20 kapitel.
 - Författare: Erland Lindmark.

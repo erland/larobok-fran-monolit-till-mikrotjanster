@@ -199,3 +199,37 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Andra layoutprovet visade att R12/R13 fortfarande låg på en egen sida. Tre upprepande förklaringar har koncentrerats med bevarade krav på plattformens erbjudande, gränssnitt, ägarskap och kvalitetsuppföljning.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## Slutlig verifiering – revision 98
+
+| Kontroll | Resultat | Omfattning/begränsning |
+|---|---|---|
+| Kapitelvis slutläsning | Genomförd | Inledning och kapitel 1–20 i ordning; efterkontroll och koncentration efter provexport i revision 90–97 |
+| Projektstruktur | Godkänd | Projektets validate_project.py |
+| Referensvalidering | Godkänd | 21 manusdelar, 23 käll-ID, 21 unika URL:er; samma URL kan ha flera befintliga käll-ID |
+| Python-syntax och Git-diff | Godkända | Befintliga skript kompilerar; inga whitespacefel i slutdiffen |
+| Redaktionella arbetsnoteringar | Inga kvarvarande fynd | Full slutläsning plus avgränsad mönstersökning av exporterade manusdelar |
+| Provexport | Godkänd | Befintlig build_book.py, Pandoc 3.1.11.1, XeLaTeX, TeX Gyre Pagella; ingen ändring av exportkoden |
+| PDF-struktur | Godkänd | 144 sidor, 21 bokmärken, titel/författare/undertitel/version ifyllda |
+| PDF-geometri och text | Godkänd automatiskt | 170 × 240 mm; inga extraherade textspann utanför sidan, inga ersättningstecken |
+| PDF-kapitelstarter och tabeller | Visuellt granskade | Renderade kapitelstarter för inledning och alla 20 kapitel; tabeller i kapitel 1, 2, 3 och 6; omslag och innehållsförteckning. Efter sista omexporten kontrollerades ändrade kapitel 11 och 17 på nytt. Inte en visuell granskning av samtliga 144 sidor. |
+| Korta källsidor | Rättade och återkontrollerade | Inga inlagessidor med mindre än 350 texttecken; ingen inlagessida börjar nu med enbart källrubriken. Källorna till kapitel 11 och 17 ligger tillsammans med respektive avslut. |
+| EPUB-struktur | Godkänd | ZIP CRC, manifest/spine och interna länkmål; 24 XHTML-dokument, 48 interna länkar; nav är inte en vanlig lässida |
+| EPUB-navigation och rubriker | Godkända strukturellt | 21 TOC-poster i kapitelordning; 20 kapitel med separata nummer-/titelspann och CSS för blockvis visning |
+| Källor i provexporterna | Godkända strukturellt | Samtliga 21 käll-URL:er finns som externa länkar i både PDF och EPUB; alla URL:ers aktuella tillgänglighet har inte testats på nytt |
+| Integritet och paketering | Godkända | Manifestkontroll samt verifiering av committade revisionssnapshots; komplett projektarkiv testat för CRC och filöverensstämmelse |
+
+### Kvar inför publiceringsbeslut
+
+- Granska den samlade PR:en och CI-resultatet.
+- Öppna den nya EPUB-utgåvan i en faktisk läsare, exempelvis Apple Böcker, och kontrollera navigation, kapitelrubriker och läsflöde. Strukturell kontroll ersätter inte det läsprovet.
+- Bedöm PDF-tabellernas läsbarhet i avsedd bokstorlek och gör ett sista läsarprov av de faktiska leveransfilerna. Layouten har kontrollerats i specificerade stickprov, inte sida för sida.
+- Ta ställning till publiceringsgodkännande och avsedd läsarversion. Ingen release eller publicering har utförts; vid release styr taggen versionsmetadata.
+
+Den redaktionella restpunkten A4 i den tidigare leveransgranskningen är åtgärdad i den omfattning som redovisas här. Tidigare avgränsningar av faktagranskningen och kraven på faktiska läsarprov gäller fortsatt.
+
+### Checksummor för de lokalt verifierade provfilerna
+
+```text
+bca10244484ab4bb6d3aa14670089e6aead41d8be806ed796407adc7241a2470  fran-monolit-till-mikrotjanster.epub
+b6d1eb41ee6b0d8efa4f157c915205c36469c8f3cb495d0a62c74f59607d86ab  fran-monolit-till-mikrotjanster.pdf
+```

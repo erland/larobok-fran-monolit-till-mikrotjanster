@@ -153,3 +153,5 @@ Revision 95 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 2 rikta
 Revision 96 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 97 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 98 (2026-10-18): Sammanställd kapitelvis slutläsning, uppdaterad aktuell status och bokspecifikation, avstämt källregister och verifierade provexporter med Pandoc 3.1.11.1. PDF 144 sidor, EPUB-navigation och länkar verifierade; visuella stickprov dokumenterade. Historiska granskningsunderlag bevarade. Ingen release utförd.

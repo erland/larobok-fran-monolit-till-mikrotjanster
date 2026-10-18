@@ -4,8 +4,8 @@ Referensnumren är unika för hela boken. Markörerna i manus är länkar till r
 
 | Referens | Kapitel | Källa |
 |---|---|---|
-| R1 | 4 | [Martin Fowler, *Microservice Trade-Offs* (2015).](https://martinfowler.com/articles/microservice-trade-offs.html) |
-| R2 | 3 | [James Lewis och Martin Fowler, *Microservices* (2014).](https://martinfowler.com/articles/microservices.html) |
+| R1 | Inledning, 1, 2, 4 | [Martin Fowler, *Microservice Trade-Offs* (2015).](https://martinfowler.com/articles/microservice-trade-offs.html) |
+| R2 | 2, 3 | [James Lewis och Martin Fowler, *Microservices* (2014).](https://martinfowler.com/articles/microservices.html) |
 | R3 | 4 | [Microsoft Learn, Azure Architecture Center, *Use domain analysis to model microservices* (åtkomst 2026-10-17).](https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis) |
 | R4 | 5 | [Kubernetes, Liveness, Readiness, and Startup Probes (åtkomst 2026-10-17).](https://kubernetes.io/docs/concepts/workloads/pods/probes/) |
 | R5 | 5 | [Kubernetes, ReplicaSet (åtkomst 2026-10-17).](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) |

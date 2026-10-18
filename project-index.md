@@ -2,13 +2,19 @@
 
 - Titel: Från monolit till mikrotjänster
 - Författare: Erland Lindmark
-- Revision: 3
-- Disposition: version 4; 20 kapitel i 6 delar
-- Inledning: redaktionellt godkänd
-- Kapitel 1: redaktionellt godkänt
-- Kapitel 2–20: planerade
-- Granskningsprotokoll: `docs/granskning-inledning-kapitel-01.md`
-- Publiceringsgodkännande: inte klart
+- Projektrevision: 98
+- Manusversion: 5.7.0; publicerad versionsmetadata hämtas från releasetagg.
+- Disposition: version 4; inledning och 20 kapitel i 6 delar.
+- Samtliga manusdelar: redaktionellt slutlästa och justerade 2026-10-18.
+- Aktuell status: `docs/projektstatus.md`.
+- Kapitelvis protokoll: `docs/slutlasning-kapitelvis-2026-10-18.md`.
+- Faktagranskning: `docs/faktakontroll.md` och etappvisa underlag.
+- Tidigare leveransgranskning: `docs/slutgranskning-publicering-2026-10-17.md`.
+- Publiceringsgodkännande: återstår efter kontroll av reviderade leveranser.
+
+## Historiska arbetsnoteringar
+
+Följande noteringar beskriver tidigare revisioner och ersätter inte aktuell status ovan. Den fullständiga revisionskedjan finns i revisionslogg, manifest och Git-historik.
 
 - Kapitel 2: redaktionellt godkänt, revision 4; ej kvalitetsgodkänt.
 
