@@ -141,3 +141,5 @@ Revision 89 (2026-10-18): Slutläst 20-nar-mikrotjanster-ar-ratt.md; 2 riktade t
 Revision 90 (2026-10-18): Slutläst 00-inledning.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 91 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 92 (2026-10-18): Slutläst 07-ansvar-for-information.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

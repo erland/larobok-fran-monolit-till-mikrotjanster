@@ -160,3 +160,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Sammanhållen efterkontroll: förklarat DBA vid första förekomsten i ansvarstabellen.
 - Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 7. Vem ansvarar för informationen? – revision 92
+
+- Sammanhållen efterkontroll: gjort även den efterföljande syftningen till ärendetjänsten uttrycklig.
+- Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
