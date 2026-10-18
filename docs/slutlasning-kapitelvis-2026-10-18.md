@@ -80,3 +80,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst stegvis utrullning, händelsekonsumenter, rollback/roll-forward, mandat och produktionsuppföljning. Inga löften om riskfri driftsättning införs.
 - Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 11. Vem tillhandahåller miljöer och gemensamma förmågor? – revision 80
+
+- Stramat upp den dubblerade beskrivningen av plattformskontrakt utan att ta bort ansvar, support eller versionslöften.
+- Samordnat de två instanserna med placeringsbeslutet i kapitel 5.
+- Skilt den deklarativa modellen i exemplet från det bredare begreppet infrastruktur som kod. Genomläst plattformserbjudande, självbetjäningsramar, databasansvar och plattformens egen förvaltning.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
