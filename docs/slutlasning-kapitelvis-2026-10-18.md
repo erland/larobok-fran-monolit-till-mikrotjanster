@@ -101,3 +101,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Använt observerbarhet konsekvent. Genomläst korrelation, SLI/SLO/SLA, asynkron status, syntetiska kontroller, larm, sampling, känsliga logguppgifter och plattformens egna avbrott. Kapitlets tidigare layoutanpassade avslut har inte byggts ut.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 14. Hur felsöker och hanterar vi incidenter? – revision 83
+
+- Lagt till att uteblivna loggposter också kan bero på fel i loggning eller insamling; de bevisar inte var anropet stoppades.
+- Samordnat åtgärdsförslaget med kapitel 6 och 9: faktisk tjänsteanslutning prövas i integrationstest, inte enbart kontraktstest.
+- Rättat två språkformuleringar. Genomläst verksamhetsprioritering, incidentmandat, säkra återställningsbeslut, beredskap, kommunikation och efteranalys; inget utökat produktionsmandat eller universellt jourkrav införs.
+- Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
