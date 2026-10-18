@@ -44,3 +44,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst placeringsalternativ, felområden, skalning och hälsokontroller. Riktad primärkällkontroll 2026-10-18: https://kubernetes.io/docs/concepts/workloads/pods/ och R4 om probes. Den teknikneutrala framställningen och reservationerna om isolering och återställning bevaras.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 6. Hur kommunicerar tjänsterna? – revision 75
+
+- Rättat ett sakligt missvisande motsatspar: ett framgångsrikt API-svar kan innehålla en korrekt tom lista; det är maskering av fel som ska undvikas.
+- Förklarat idempotens och preciserat att ett operations-ID kräver faktisk hantering av dubbletter och en bestämd giltighetstid.
+- Genomläst synkron/asynkron kommunikation, säkerhetskontroller, ansvarstabell och scenariots lösning. Riktad kontroll 2026-10-18 mot R6 och AWS Builders Library, https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/. Ersatt ett oförklarat matrisnamn med ansvarsmatris.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

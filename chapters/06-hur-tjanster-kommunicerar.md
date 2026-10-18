@@ -2,7 +2,7 @@
 
 När ärendehanteringen och dokumenthanteringen låg i samma backend kunde de dela programkod, anropa varandras funktioner och använda samma databas. När dokumenthanteringen blir en självständig tjänst förändras något grundläggande: även en till synes enkel fråga om ett dokument måste nu passera en gräns där nätverk, kontrakt, säkerhet och driftförutsättningar spelar roll.
 
-Föreställ dig att en handläggare öppnar ett ärende. Ärendetjänsten behöver visa en lista över dokument. I testmiljön fungerar allt, men i produktionen visas inga dokument. Ett tomt resultat får inte förväxlas med ett lyckat API-svar: gränssnittet behöver tydligt skilja mellan att ärendet saknar dokument och att hämtningen har misslyckats. Loggarna visar att ärendetjänsten försöker nå dokumenttjänsten – och får timeout. Är felet i programmet, DNS, lastbalanseringen, en brandvägg, tjänstens hälsa eller i en behörighetskontroll? Och vem ska avgöra det?
+Föreställ dig att en handläggare öppnar ett ärende. Ärendetjänsten behöver visa en lista över dokument. I testmiljön fungerar allt, men i produktionen visas inga dokument. Ett lyckat API-svar kan korrekt innehålla en tom dokumentlista. En misslyckad hämtning får däremot inte döljas som ett sådant svar: gränssnittet behöver tydligt skilja mellan att ärendet saknar dokument och att hämtningen har misslyckats. Loggarna visar att ärendetjänsten försöker nå dokumenttjänsten – och får timeout. Är felet i programmet, DNS, lastbalanseringen, en brandvägg, tjänstens hälsa eller i en behörighetskontroll? Och vem ska avgöra det?
 
 Det här kapitlet handlar om hur **tjänsternas kommunikation blir både en arkitekturfråga och en driftfråga**. Val av API eller händelseflöde kan inte göras isolerat från trafikväg, säkerhetsgränser och möjligheten att felsöka helheten.
 
@@ -18,7 +18,7 @@ Det är lätt att göra misstaget att ersätta interna funktionsanrop med många
 
 Ett synkront API-anrop passar när ärendetjänsten behöver ett svar för att kunna visa aktuella dokumentmetadata. Ofta används HTTP med ett tydligt definierat gränssnitt. Avsändaren måste veta när den ska sluta vänta och vad som ska hända om svaret uteblir.
 
-Här behöver vi skilja mellan olika fel. Ett nekande svar på grund av saknad behörighet betyder något annat än att tjänsten är överbelastad. Ett timeout-fel betyder inte nödvändigtvis att mottagaren inte utförde åtgärden; svaret kan ha försvunnit på vägen tillbaka. Därför är det riskabelt att automatiskt försöka igen, särskilt för operationer som skapar eller ändrar information. Säker återupprepning kan kräva idempotens, till exempel ett unikt operations-ID som mottagaren kan känna igen.
+Här behöver vi skilja mellan olika fel. Ett nekande svar på grund av saknad behörighet betyder något annat än att tjänsten är överbelastad. Ett timeout-fel betyder inte nödvändigtvis att mottagaren inte utförde åtgärden; svaret kan ha försvunnit på vägen tillbaka. Därför är det riskabelt att automatiskt försöka igen, särskilt för operationer som skapar eller ändrar information. Säker återupprepning kan kräva idempotens: upprepningen ska inte skapa ytterligare verksamhetseffekter. Ett sätt är att använda ett unikt operations-ID som mottagaren lagrar och kontrollerar tillsammans med resultatet, så att samma operation inte utförs på nytt. Hur länge detta skydd gäller behöver också vara bestämt.
 
 Även läsanrop behöver välavvägda tidsgränser. Om ärendetjänsten väntar länge på dokumenttjänsten kan dess egna resurser bindas upp och antalet väntande förfrågningar växa. Överbelastning kan då spridas mellan tjänster. Hur sådana fel begränsas fördjupas i kapitel 12; här är poängen att kommunikationsmönstret måste ge utrymme för dem.
 
@@ -74,7 +74,7 @@ Ett viktigt beslut måste vara fattat i förväg: **vem leder felsökningen när
 | Hantera timeout och fel i klientkod | Huvudansvar | Tillhandahåller mätvärden | — |
 | Felsöka kommunikationsproblem | Undersöker anrop | Undersöker plattform och trafik | Undersöker nätverk och policy |
 
-Tabellen är ett exempel på ansvar för genomförande och samverkan, inte en fullständig RACI-matris. Beslutsmandat för avsteg, driftberedskap och incidentledning behöver dokumenteras separat. En liten organisation kan samla flera roller i samma team, och en större organisation kan separera nätverk, säkerhet, drift och plattform. Det viktiga är att ingen förutsätter att någon annan äger helheten.
+Tabellen är ett exempel på ansvar för genomförande och samverkan, inte en fullständig ansvarsmatris. Beslutsmandat för avsteg, driftberedskap och incidentledning behöver dokumenteras separat. En liten organisation kan samla flera roller i samma team, och en större organisation kan separera nätverk, säkerhet, drift och plattform. Det viktiga är att ingen förutsätter att någon annan äger helheten.
 
 ## Vårt ärendehanteringssystem – från fel till förbättring
 
