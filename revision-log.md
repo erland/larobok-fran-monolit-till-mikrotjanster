@@ -125,3 +125,5 @@ Revision 81 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 3 riktade text
 Revision 82 (2026-10-18): Slutläst 13-observerbarhet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 83 (2026-10-18): Slutläst 14-incidenthantering.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 84 (2026-10-18): Slutläst 15-sakerhet-och-identitet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

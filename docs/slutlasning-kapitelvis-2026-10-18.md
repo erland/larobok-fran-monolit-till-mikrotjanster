@@ -108,3 +108,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Rättat två språkformuleringar. Genomläst verksamhetsprioritering, incidentmandat, säkra återställningsbeslut, beredskap, kommunikation och efteranalys; inget utökat produktionsmandat eller universellt jourkrav införs.
 - Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 15. Hur skyddar vi systemet och dess information? – revision 84
+
+- Skilt signerade JWT från ogenomskinliga token; JWT-specifika verifieringsråd ska inte läsas som att alla token har samma format.
+- Skilt planerad rotation med möjlig överlappning från akut spärr vid röjda uppgifter.
+- Riktad källkontroll 2026-10-18 mot R17 (objektspecifik auktorisation) och R18 (JWT-verifiering och mottagarkontroll). Genomläst delegering, tjänsteidentiteter, signerade länkar, skydd av kopior och säkerhetsincidenter. Inga rättsliga tidsfrister eller ogrundade efterlevnadslöften införs.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
