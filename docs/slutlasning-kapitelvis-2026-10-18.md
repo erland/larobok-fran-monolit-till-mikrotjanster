@@ -58,3 +58,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst informationsansvar, isolering, mellanlägen, kompensation, eventual consistency och migrering. Riktad kontroll 2026-10-18 mot R7 och AWS Prescriptive Guidance, https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html. Det tillagda felscenariot är en förklaring av tillförlitlig händelsespridning, inte ett löfte om exakt-en-gång-leverans.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 8. Hur förändras utvecklingsmiljöerna? – revision 77
+
+- Låtit exemplet gälla dokumenttjänstens egen namnvalidering i stället för en presentationsregel som kunde uppfattas höra till frontend.
+- Rättat den sammanblandade formuleringen om konfiguration och hemligheter: okänslig konfiguration kan versionsstyras, autentiseringshemligheter ska hanteras separat.
+- Genomläst testdubblar, reproducerbarhet, isolering, syntetiska testdata och rollfördelning. Tagit bort ett överflödigt därför i övergången till kapitel 9.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
