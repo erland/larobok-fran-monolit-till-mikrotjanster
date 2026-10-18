@@ -122,3 +122,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst samtidiga livscykler, patchningsansvar, transitiva beroenden, faktisk produktionsversion, kompatibilitet och avveckling; framställningen lovar inte att inventering eller sårbarhetsskanning ensamt ger säkerhet.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 17. Hur säkerställer vi återställning, kontinuitet och kostnadskontroll? – revision 86
+
+- Förtydligat att mätning av återställningstid behöver definierade start- och slutpunkter.
+- Preciserat att tätare kopiering inte ensam ger noll dataförlust och att skyddet måste knytas till bekräftade mottaganden, filer, metadata och definierade felscenarier.
+- Begränsat slutsatsen av en återställningsövning till vad den faktiskt prövat. Genomläst kopior/repliker, återuppspelning, sidoeffekter, avstämning, prioriteringsordning och kostnadsavvägningar. Riktad kontroll 2026-10-18 av R20:s publiceringspost och kontinuitetsinriktning; ingen ny heltäckande standardgranskning påstås.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

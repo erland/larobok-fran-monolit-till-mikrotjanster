@@ -14,9 +14,9 @@ Detta illustrerar skillnaden mellan **teknisk återläsning** och **verksamhetsm
 
 ## Två mått som måste översättas till verksamhetskrav
 
-Två vanliga kontinuitetsmått är *Recovery Time Objective* (RTO), den längsta planerade tiden för återställning, och *Recovery Point Objective* (RPO), den maximalt accepterade förlusten av data uttryckt som tid. Måtten är mål, inte garantier. **RTO måste knytas till vilken verksamhetsförmåga som ska vara återställd**, inte bara till att en databas svarar. RPO behöver på motsvarande sätt avse det informationsflöde vars förlust verksamheten ska acceptera, inte slentrianmässigt enbart tidpunkten för senaste backup. De säger dessutom inte automatiskt att ett verksamhetsflöde blir korrekt efter återställningen.
+Två vanliga kontinuitetsmått är *Recovery Time Objective* (RTO), den längsta planerade tiden för återställning, och *Recovery Point Objective* (RPO), den maximalt accepterade förlusten av data uttryckt som tid. Måtten är mål, inte garantier. Startpunkt och slutpunkt för den uppmätta återställningstiden behöver också vara definierade. **RTO måste knytas till vilken verksamhetsförmåga som ska vara återställd**, inte bara till att en databas svarar. RPO behöver på motsvarande sätt avse det informationsflöde vars förlust verksamheten ska acceptera, inte slentrianmässigt enbart tidpunkten för senaste backup. De säger dessutom inte automatiskt att ett verksamhetsflöde blir korrekt efter återställningen.
 
-Om verksamheten kräver att ärenden ska kunna öppnas inom fyra timmar, men accepterar att dokumentuppladdning är begränsad längre, kan funktionerna ha olika återställningsprioritet. Om inga nya dokument får gå förlorade räcker däremot inte en nattlig databaskopia, även om dokumenttjänsten kan startas snabbt. Lösningen kan kräva tätare skydd, loggbaserad återställning eller andra mekanismer för beständighet och återskapande.
+Om verksamheten kräver att ärenden ska kunna öppnas inom fyra timmar, men accepterar att dokumentuppladdning är begränsad längre, kan funktionerna ha olika återställningsprioritet. Om inga bekräftat mottagna dokument får gå förlorade räcker däremot inte en nattlig databaskopia, även om dokumenttjänsten kan startas snabbt. Tätare kopiering kan minska möjlig dataförlust, men uppfyller inte ensam ett mål om noll förlust. Innan mottagandet bekräftas behöver informationen ha säkrats så att den kan återställas efter de fel som skyddet ska omfatta. Både dokumentfiler och nödvändig metadata måste ingå i den bedömningen.
 
 Verksamheten behöver uttrycka **vilka arbetsuppgifter som inte får avbrytas, hur länge de får vara otillgängliga och vilka informationsförluster som kan accepteras**. Applikationsteamen översätter detta till regler för data, beroenden och kompensation. Drift och plattform bedömer vilka tekniska åtgärder som krävs och vilka kostnader de för med sig. Säkerhets- och informationsansvariga behöver delta där lagring, integritet eller regelkrav påverkas.
 
@@ -78,7 +78,7 @@ Det ansvaret kan ligga hos en utsedd tjänsteägare, förvaltningsledning eller 
 
 Vårt dokumentexempel visar varför distribuerad arkitektur förändrar återställningsfrågan. Målet är inte bara att ärendetjänsten och dokumenttjänsten åter ska svara på anrop. Målet är att ärenden och dokument åter bildar en tillförlitlig helhet och att användarna vet vilka moment som fungerar, vilka som ännu väntar och vilka uppgifter som kan kräva manuell kontroll.
 
-Samtidigt måste denna förmåga finansieras och övas under hela systemets livscykel. Den verkliga kontinuitetsnivån är den organisationen kan visa i en återställningsövning, inte den som enbart står i en plan.
+Samtidigt måste denna förmåga finansieras och övas under hela systemets livscykel. Återställningsövningar ger belägg för vad organisationen klarar i de prövade scenarierna. En plan behöver stödjas av sådana resultat, samtidigt som oprövade fel och beroenden kan innebära kvarstående risker.
 
 ### Källor och vidare läsning
 
