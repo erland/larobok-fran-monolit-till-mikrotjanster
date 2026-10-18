@@ -136,3 +136,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst mandat, undantag, finansiering, gemensamma mål, incidentuppföljning, leverantörsgränser och överlämning när team upphör. Avgränsningen mot den praktiska incidenthanteringen bevaras.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 19. Hur lever vi med gamla och nya arkitekturer samtidigt? – revision 88
+
+- Skilt oavsiktligt permanentade övergångslösningar från en medvetet vald, varaktig kombination av monolit och tjänster. Det följer bokens princip att hela monoliten inte måste ersättas.
+- Ersatt ett generellt krav på tidsbundet mellanläge med omprövning, avvecklingskriterier och tydligt beslut om bestående delar.
+- Genomläst strangler-mönstret, översättningslager, etappvis dataägarskap, dubbla skrivningar, cutover, säkerhet, blandade versioner och avvecklingsprov. Rättat en saknad konjunktion.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

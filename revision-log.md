@@ -133,3 +133,5 @@ Revision 85 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 3 riktade te
 Revision 86 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 87 (2026-10-18): Slutläst 18-ansvar-och-styrning.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 88 (2026-10-18): Slutläst 19-gamla-och-nya-arkitekturer.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
