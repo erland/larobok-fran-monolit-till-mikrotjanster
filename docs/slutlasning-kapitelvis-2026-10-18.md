@@ -16,3 +16,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Kontrollerat ansvarstabell, transaktionsresonemang, driftperspektiv, långsiktig förvaltning och övergången till dokumenttjänsten; den balanserade jämförelsen bevaras.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 2. Vad händer när systemet delas upp? – revision 71
+
+- Skilt mellan en inkompatibel ändring och en faktiskt samordnad övergång; beskrivit parallellt stöd som ett möjligt sätt att genomföra övergången.
+- Förklarat API vid första förekomsten för att stödja läsare från drift- och infrastruktursidan.
+- Genomläst partiella fel, inventering, ansvar och jämförelsetabell. De korta tabellrubrikerna från föregående layoutkorrigering bevaras.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

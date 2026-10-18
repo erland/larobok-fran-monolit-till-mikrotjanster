@@ -20,7 +20,7 @@ Den nya gränsen syns i arkitekturen, men även i organisationens vardag. Någon
 
 Ett sammanhållet system kan utvecklas modulärt, ha automatiserade tester och skalas med flera instanser. Det som särskiljer vårt nya exempel är inte att det plötsligt blir modernt, utan att dokumenttjänsten har en egen kör- och leveranslivscykel. Den kan i princip byggas, driftsättas och förändras utan att ärendedelen ändras, förutsatt att deras kontrakt förblir kompatibla.
 
-Det ger en möjlig fördel: dokumentteamet kan rätta ett isolerat fel utan att driftsätta resten av ärendehanteringen. Men självständigheten är inte gratis. Om dokumenttjänsten ändrar svarets struktur så att ärendedelen inte längre förstår den, är förändringen i praktiken fortfarande samordnad. Oberoende driftsättning förutsätter alltså gränssnitt som utvecklas med hänsyn till sina användare.
+Det ger en möjlig fördel: dokumentteamet kan rätta ett isolerat fel utan att driftsätta resten av ärendehanteringen. Men självständigheten är inte gratis. Om dokumenttjänsten ändrar svarets struktur så att ärendedelen inte längre förstår den, uppstår en inkompatibel förändring. Då krävs en samordnad övergång eller en period då dokumenttjänsten stöder både det gamla och det nya kontraktet. Oberoende driftsättning förutsätter alltså gränssnitt som utvecklas med hänsyn till sina användare.
 
 När flera tjänster har skilda versioner finns inte alltid en enda versionsbeteckning som entydigt beskriver hela IT-stödet. Drift, support och felsökning kan behöva veta vilken version av varje berörd tjänst som faktiskt kördes när ett problem uppstod. Leveransinformation och spårbarhet behöver då knyta samman tjänsteversioner, konfiguration och tidpunkt, snarare än enbart hänvisa till en gemensam systemrelease.
 
@@ -50,7 +50,7 @@ Här blir samspelet mellan utveckling och drift konkret. Applikationsteamet kan 
 
 När dokumenthanteringen låg i samma applikation kunde utvecklare i många fall ändra både anropande och anropad kod i samma ändring. Efter uppdelningen behöver de förhålla sig till ett kontrakt. Det måste vara begripligt för andra team, kunna provas och förändras utan onödiga störningar.
 
-Kontraktet handlar inte bara om vilka fält ett API skickar tillbaka. Det omfattar även förväntat beteende: vad händer om ett dokument saknas, om användaren saknar behörighet eller om tjänsten är tillfälligt överbelastad? Vilka svar ska konsumenten kunna hantera? Och hur länge stöds en äldre variant av gränssnittet?
+Kontraktet handlar inte bara om vilka fält ett applikationsgränssnitt, ett API, skickar tillbaka. Det omfattar även förväntat beteende: vad händer om ett dokument saknas, om användaren saknar behörighet eller om tjänsten är tillfälligt överbelastad? Vilka svar ska konsumenten kunna hantera? Och hur länge stöds en äldre variant av gränssnittet?
 
 Dessutom finns ett driftskontrakt i praktisk mening. Vilken tillgänglighet förväntas? Hur snabbt måste fel upptäckas? Vem får förändra de nätverksförbindelser som krävs? Vem kan kontaktas vid problem? Inte allt behöver vara ett formellt avtal. Men utan gemensamma förväntningar uppstår lätt ett glapp mellan teknikens faktiska beteende och verksamhetens krav.
 
