@@ -165,3 +165,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Sammanhållen efterkontroll: gjort även den efterföljande syftningen till ärendetjänsten uttrycklig.
 - Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 12. Vad händer när en tjänst slutar fungera? – revision 93
+
+- Sammanhållen efterkontroll: förenklat meningen om kontrollen av trafikberedskap.
+- Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

@@ -60,7 +60,7 @@ En kö kan alltså förbättra tåligheten vid tillfälliga avbrott, men den int
 
 En plattform kan övervaka om dokumenttjänstens instanser körs och om de kan ta emot trafik. Sådana hälsokontroller är viktiga, men de räcker inte för att avgöra om handläggaren faktiskt kan öppna ett dokument. En instans kan svara på hälsokontroller samtidigt som dess datalager är mycket långsamt eller ett beroende är felkonfigurerat.
 
-Hälsokontroller för **om instansen lever** och **om den bör få trafik** behöver utformas med eftertanke. Om kontrollen av om instansen är redo för trafik gör varje instans oanvändbar så snart ett gemensamt externt beroende fallerar, kan hela tjänsten tas ur trafik utan att någon annan instans kan hjälpa. Samtidigt får en instans som faktiskt inte kan ta emot begäran inte felaktigt markeras redo.
+Hälsokontroller för **om instansen lever** och **om den bör få trafik** behöver utformas med eftertanke. Om kontrollen tar varje instans ur trafik så snart ett gemensamt externt beroende fallerar, kan hela tjänsten tas ur trafik utan att någon annan instans kan hjälpa. Samtidigt får en instans som faktiskt inte kan ta emot begäran inte felaktigt markeras redo.
 
 Utöver tekniska kontroller behöver organisationen följa verkliga verksamhetsflöden: går det att öppna ett ärende, läsa dess dokument och slutföra en registrering? Metoderna för hur detta mäts och visualiseras behandlas i nästa kapitel om observerbarhet.
 
