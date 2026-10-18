@@ -143,3 +143,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst strangler-mönstret, översättningslager, etappvis dataägarskap, dubbla skrivningar, cutover, säkerhet, blandade versioner och avvecklingsprov. Rättat en saknad konjunktion.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 20. När är mikrotjänster rätt väg? – revision 89
+
+- Samordnat nyttan med separat dokumenttjänst med kapitlets tidigare avvägning: skalning av lagring ensam kräver inte att domänlogiken bryts ut.
+- Rättat böjningen ändrade arbetssätt.
+- Genomläst hela slutkapitlet inklusive beslutsfrågor, alternativ, kostnader, stegvis prövning och slutord. Avslutningen återknyter till båda målgrupperna och rekommenderar inte fler tjänster som självändamål.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
