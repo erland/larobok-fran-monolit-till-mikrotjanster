@@ -1,12 +1,12 @@
 # 11. Vem tillhandahåller miljöer och gemensamma förmågor?
 
-I det traditionella ärendehanteringssystemet går det kanske att beskriva vägen till en ny miljö med några få beställningar: en virtuell maskin från servergruppen, en databas från DBA-funktionen, ett DNS-namn och en brandväggsöppning. Så småningom installerar applikationsgruppen sin programvara. Varje leverans kan fungera bra var för sig, men tiden mellan idé och körbar miljö styrs av flera manuella överlämningar.
+I det traditionella ärendehanteringssystemet kan en ny miljö kräva beställningar av VM, databas, DNS-namn och brandväggsöppning innan applikationen installeras. Varje leverans kan fungera väl, men de manuella överlämningarna styr tiden från idé till körbar miljö.
 
 När dokumenthanteringen blir en självständig tjänst förändras förutsättningarna. Fler tjänster kan behöva utvecklas, provas, uppdateras och driftsättas vid olika tillfällen. Om varje tjänst behöver en lång kedja av specialbeställningar förlorar arkitekturen en del av den självständighet den var avsedd att skapa. Lösningen behöver inte vara att alla utvecklare blir serveradministratörer. Den kan vara att organisationen bygger gemensamma **plattformsförmågor** som gör beprövade driftlösningar enkla att använda utan att ansvar och säkerhet går förlorade. [R12](https://learn.microsoft.com/en-us/platform-engineering/overview/)
 
 ## Plattformen är ett erbjudande, inte bara ett kluster
 
-En plattform är mer än servrar, containrar eller en orkestrator. Den blir användbar först när den erbjuder dokumenterade och förutsägbara sätt att få något gjort: skapa en tjänstemiljö, driftsätta en version, ansluta en databas, hantera hemligheter, se loggar och mäta om tjänsten fungerar. Organisationen behöver veta vilka förmågor som tillhandahålls, vilka krav de uppfyller och vilka begränsningar användarna måste acceptera.
+En plattform erbjuder dokumenterade sätt att skapa miljöer, driftsätta program, ansluta databaser, hantera hemligheter och följa tjänsternas funktion. Servrar och containrar räcker inte som erbjudande: användarna behöver också känna till förmågornas krav, garantier och begränsningar.
 
 Det kan beskrivas som ett **plattformskontrakt**. Det anger vad applikationsteamet behöver deklarera, vilka kontroller som görs automatiskt och vem som godkänner undantag. Det beskriver också erbjuden tillgänglighet, kontaktvägar, incidentansvar, stödda versioner och hur plattformsförändringar meddelas. Kontraktet behöver inte vara ett juridiskt dokument. Poängen är att beroendet mellan utveckling och plattform blir begripligt och styrbart.
 
@@ -62,7 +62,7 @@ Det är också möjligt att samma team har flera roller i en mindre organisation
 
 En gemensam plattform ger standardisering men blir också ett beroende för många tjänster. En felaktig uppdatering av ett gemensamt certifikatflöde eller en ändrad nätverkspolicy kan få större spridning än ett fel i en enskild mikrotjänst. Plattformens egna ändringar behöver därför testas, kommuniceras och driftsättas kontrollerat. Tjänsteteam behöver veta vilka delar som är stabila, vilka som är på väg att avvecklas och hur länge kompatibilitet upprätthålls.
 
-För att plattformen ska bli användbar över tid behövs ett uttalat ägarskap, en väg för användarstöd, kapacitet att hantera förbättringsförslag och en plan för avveckling av äldre plattformsgränssnitt. Plattformens kvalitet bör inte bara mätas i upptid. Den bör också bedömas utifrån hur lätt det är att använda säkra standardlösningar, hur snabbt team kan få en fungerande miljö, hur ofta manuella undantag krävs och hur tydligt incidenter kan felsökas. Om självbetjäningen kräver specialistkunskap och långa handböcker har plattformen kanske bara flyttat komplexiteten till utvecklaren.
+Plattformen behöver ägarskap, användarstöd, utrymme för förbättringar och en plan för äldre gränssnitt. Utöver upptid bör kvaliteten följas genom miljöernas leveranstid, behovet av undantag och möjligheten att felsöka. Säkra standardlösningar ska vara lätta att använda; annars kan självbetjäningen bara flytta komplexiteten till utvecklaren.
 
 För driftsidan innebär detta en förskjutning från att utföra samma manuella moment upprepade gånger till att utveckla och förvalta gemensamma automatiserade förmågor. Det är ett kvalificerat driftuppdrag, inte en avveckling av driftkompetensen. För applikationssidan innebär det att kunna formulera sina behov i standardiserade termer och ta ansvar för hur den egna tjänsten använder plattformens erbjudande.
 

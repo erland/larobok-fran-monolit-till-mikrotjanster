@@ -194,3 +194,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Provexporten gav en sida med enbart källrubrik och R20. Tre upprepande stycken har koncentrerats utan att ta bort återställningskrav, nyckelberoenden, användarinformation eller begränsningen till prövade scenarier. Omexport används för att kontrollera att källposten ryms med kapitelavslutet.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 11. Vem tillhandahåller miljöer och gemensamma förmågor? – revision 97
+
+- Andra layoutprovet visade att R12/R13 fortfarande låg på en egen sida. Tre upprepande förklaringar har koncentrerats med bevarade krav på plattformens erbjudande, gränssnitt, ägarskap och kvalitetsuppföljning.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
