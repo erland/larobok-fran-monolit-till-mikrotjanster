@@ -225,3 +225,7 @@ Referenser R19–R23 har införts i kapitel 16–20. Se `docs/kallhanvisningar-e
 ## Samlad referenskontroll – revision 55
 
 Se `docs/samlad-referenskontroll-revision-55.md` och `docs/samlad-kallforteckning.md`. Referensstrukturen är verifierad; fullständig beläggskontroll av varje detaljpåstående återstår.
+
+## Redaktionell slutläsning 2026-10-18
+
+Inledning och kapitel 1–20 är genomlästa och justerade enligt `slutlasning-kapitelvis-2026-10-18.md`. Där redovisas omfattning, riktade primärkällkontroller och tekniska preciseringar. Detta ersätter inte de tidigare faktagranskningsprotokollen och innebär inte en ny heltäckande extern faktakontroll eller automatiskt publiceringsgodkännande. Kapitelhänvisningarna i den samlade källförteckningen har stämts av mot samtliga faktiska förekomster.

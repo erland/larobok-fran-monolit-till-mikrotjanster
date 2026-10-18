@@ -10,7 +10,7 @@ Vårt fiktiva ärendehanteringsstöd har tre tydliga huvuddelar: frontend, backe
 
 Det betyder inte att systemet är enkelt. Backend kan rymma hundratals moduler, integrationer och affärsregler. Frontend och backend kan driftsättas separat, och databasen kan ligga på andra servrar. Det avgörande i detta exempel är snarare att flera funktioner förvaltas och förändras inom en gemensamt samordnad applikationshelhet.
 
-En *monolit* betyder i arkitektursammanhang vanligen att en större del av applikationens funktioner levereras som en gemensam driftsättningsenhet. Frontend, backend och databas är däremot en beskrivning av tekniska lager, inte i sig ett bevis för att lösningen är monolitisk. Det är inte samma sak som dålig kodstruktur. En modulär monolit kan ha tydliga interna gränser och en välordnad domänmodell. Omvänt kan tre tekniska lager ha omfattande inbördes beroenden även när de körs på skilda servrar.
+En *monolit* betyder i arkitektursammanhang vanligen att en större del av applikationens funktioner levereras som en gemensam driftsättningsenhet. Frontend, backend och databas är däremot en beskrivning av tekniska lager, inte i sig ett bevis för att lösningen är monolitisk. Att en applikation är monolitisk betyder inte att den har dålig kodstruktur. En modulär monolit kan ha tydliga interna gränser och en välordnad domänmodell. Omvänt kan tre tekniska lager ha omfattande inbördes beroenden även när de körs på skilda servrar.
 
 Vi använder fortsättningsvis det traditionella IT-stödet som jämförelsepunkt, inte som en karikatyr av föråldrad teknik.
 
@@ -24,7 +24,7 @@ Applikationens arkitektur och driftens topologi är två olika bilder av samma l
 
 ## Miljöerna skapar förutsägbarhet
 
-De flesta etablerade organisationer skiljer mellan utveckling, test och produktion. Ibland finns dessutom integrations-, acceptans- och utbildningsmiljöer. Varje miljö har sitt syfte, sina åtkomsträttigheter och sin driftmässiga förvaltning.
+Många etablerade organisationer skiljer mellan utveckling, test och produktion. Ibland finns dessutom integrations-, acceptans- och utbildningsmiljöer. Varje miljö har sitt syfte, sina åtkomsträttigheter och sin driftmässiga förvaltning.
 
 Applikationsgruppen kan arbeta i utvecklingsmiljön, sammanställa en release och lämna över den för test. Driftorganisationen kan etablera servrar, öppna nätverksförbindelser, installera certifikat, säkra databaser och planera driftsättningen. Testorganisationen kan verifiera den nya systemversionen mot ett definierat urval av testdata.
 
@@ -39,7 +39,7 @@ En vanlig ansvarsfördelning kan se ut så här:
 | Funktion och applikationskod | Utvecklings- och applikationsförvaltning | Krav, kvalitet, felrättningar och release |
 | Servrar och virtualisering | Infrastrukturdrift | Kapacitet, operativsystem, tillgänglighet och patchning |
 | Nätverk och brandväggar | Nätverksdrift och säkerhetsfunktion | Tillåtna trafikflöden, zoner och felsökning |
-| Databasteknik | DBA eller databasdrift | Installation, prestanda, backup och återställning |
+| Databasteknik | Databasadministratörer (DBA) eller databasdrift | Installation, prestanda, backup och återställning |
 | Behörighet och autentisering | Applikationsansvariga tillsammans med identitetsfunktion | Inloggning, roller, åtkomstkontroll och spårbarhet |
 | Verksamhetsfunktion och prioritering | Systemägare eller verksamhetsnära förvaltning | Nytta, finansiering och förändringsbeslut |
 
@@ -51,7 +51,7 @@ Det traditionella systemnamnet fungerar ofta som en gemensam referenspunkt. Syst
 
 En gemensam relationsdatabas gör det ofta enkelt att läsa och uppdatera sammanhängande information i en transaktion. Om ett beslut registreras och ärendets status ska uppdateras kan båda förändringarna i många fall genomföras atomärt: antingen lyckas båda eller också rullas de tillbaka.
 
-Det ger en begriplig konsistensmodell. Databasadministratörer kan arbeta med index, behörigheter, replikering, backup och återställning med kännedom om en gemensam databasinstallation. Utvecklare kan göra sammanställningar över flera tabeller utan att nödvändigtvis använda ett nätverksanrop mellan varje informationsområde.
+Det ger en begriplig konsistensmodell. Databasadministratörer kan arbeta med index, behörigheter, replikering, backup och återställning med kännedom om en gemensam databasinstallation. Utvecklare kan göra sammanställningar över flera tabeller i en databasfråga, utan separata anrop till tjänster för varje informationsområde. Anropet till själva databasen kan fortfarande gå över nätverket.
 
 Samtidigt uppstår kopplingar. Om många funktioner läser direkt ur samma tabeller kan en schemaändring få stora konsekvenser. En långvarig transaktion kan påverka andra delar av systemet. Ett växande databasbehov kan tvinga fram gemensamma prioriteringar. Den gemensamma databasen är därför både en integrationsfördel och en potentiell begränsning för oberoende förändringar. Att samla data i samma databasteknik behöver dock inte innebära att alla moduler tillåts läsa och skriva varandras tabeller.
 

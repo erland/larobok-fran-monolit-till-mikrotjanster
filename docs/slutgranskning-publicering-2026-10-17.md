@@ -5,6 +5,10 @@
 **Metod:** Kontroll enligt Lärobokskaparens publiceringsgrind; programmatisk genomgång av PDF:s 146 sidor och EPUB:s struktur och länkar, plus visuell granskning av utvalda PDF-sidor. **Inte** en fullständig manuell korrekturläsning av all löptext.  
 **Bedömning:** **Inte publiceringsgodkänd ännu**. Korrigera metadata och bedöm en layoutavvikelse; avsluta innehållslig slutläsning och gör nytt provbygge.
 
+## Uppföljning 2026-10-18
+
+Rapportens sidnummer och leveransresultat nedan gäller de ursprungligen granskade filerna. Metadata- och tabellkorrigeringar har därefter mergats i PR #3. Den fullständiga redaktionella slutläsningen i A4 är nu genomförd för inledning och kapitel 1–20, inklusive källavsnitt. Genomförda textändringar och verifiering av nya provexporter redovisas i `slutlasning-kapitelvis-2026-10-18.md`. Tidigare layoutstickprov kan inte utan vidare överföras till den ombrutna texten. Ett slutligt läsar- och publiceringsgodkännande återstår.
+
 ## Verifierade resultat
 
 | Del | Utfall | Evidens |

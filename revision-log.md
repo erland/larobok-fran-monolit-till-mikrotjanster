@@ -95,3 +95,63 @@
 Revision 56 (2026-10-17): Korrektur- och provexportarbete genomfört. PDF och EPUB genererade i bokformat. Manus oförändrat; publiceringskontroller återstår.
 
 Revision 57 (2026-10-17): Godkänd omslagsbild sparad i `assets/cover/omslag.png`; projektmetadata och EPUB-export uppdaterade. Kapiteltexter oförändrade.
+
+Revision 69 (2026-10-18): Slutläst 00-inledning.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 70 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 71 (2026-10-18): Slutläst 02-nar-systemet-delas-upp.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 72 (2026-10-18): Slutläst 03-ansvar-i-distribuerat-system.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 73 (2026-10-18): Slutläst 04-hur-systemet-delas-upp.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 74 (2026-10-18): Slutläst 05-var-tjansterna-kors.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 75 (2026-10-18): Slutläst 06-hur-tjanster-kommunicerar.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 76 (2026-10-18): Slutläst 07-ansvar-for-information.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 77 (2026-10-18): Slutläst 08-utvecklingsmiljoer.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 78 (2026-10-18): Slutläst 09-testmiljoer-och-kvalitet.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 79 (2026-10-18): Slutläst 10-leverera-forandringar.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 80 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 81 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 82 (2026-10-18): Slutläst 13-observerbarhet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 83 (2026-10-18): Slutläst 14-incidenthantering.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 84 (2026-10-18): Slutläst 15-sakerhet-och-identitet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 85 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 86 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 87 (2026-10-18): Slutläst 18-ansvar-och-styrning.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 88 (2026-10-18): Slutläst 19-gamla-och-nya-arkitekturer.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 89 (2026-10-18): Slutläst 20-nar-mikrotjanster-ar-ratt.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 90 (2026-10-18): Slutläst 00-inledning.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 91 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 92 (2026-10-18): Slutläst 07-ansvar-for-information.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 93 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 94 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 95 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 96 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 97 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 98 (2026-10-18): Sammanställd kapitelvis slutläsning, uppdaterad aktuell status och bokspecifikation, avstämt källregister och verifierade provexporter med Pandoc 3.1.11.1. PDF 144 sidor, EPUB-navigation och länkar verifierade; visuella stickprov dokumenterade. Historiska granskningsunderlag bevarade. Ingen release utförd.

@@ -14,9 +14,9 @@ Detta illustrerar skillnaden mellan **teknisk återläsning** och **verksamhetsm
 
 ## Två mått som måste översättas till verksamhetskrav
 
-Två vanliga kontinuitetsmått är *Recovery Time Objective* (RTO), den längsta planerade tiden för återställning, och *Recovery Point Objective* (RPO), den maximalt accepterade förlusten av data uttryckt som tid. Måtten är mål, inte garantier. **RTO måste knytas till vilken verksamhetsförmåga som ska vara återställd**, inte bara till att en databas svarar. RPO behöver på motsvarande sätt avse det informationsflöde vars förlust verksamheten ska acceptera, inte slentrianmässigt enbart tidpunkten för senaste backup. De säger dessutom inte automatiskt att ett verksamhetsflöde blir korrekt efter återställningen.
+Två vanliga kontinuitetsmått är *Recovery Time Objective* (RTO), den längsta planerade tiden för återställning, och *Recovery Point Objective* (RPO), den maximalt accepterade förlusten av data uttryckt som tid. Måtten är mål, inte garantier. Startpunkt och slutpunkt för den uppmätta återställningstiden behöver också vara definierade. **RTO måste knytas till vilken verksamhetsförmåga som ska vara återställd**, inte bara till att en databas svarar. RPO behöver på motsvarande sätt avse det informationsflöde vars förlust verksamheten ska acceptera, inte slentrianmässigt enbart tidpunkten för senaste backup. De säger dessutom inte automatiskt att ett verksamhetsflöde blir korrekt efter återställningen.
 
-Om verksamheten kräver att ärenden ska kunna öppnas inom fyra timmar, men accepterar att dokumentuppladdning är begränsad längre, kan funktionerna ha olika återställningsprioritet. Om inga nya dokument får gå förlorade räcker däremot inte en nattlig databaskopia, även om dokumenttjänsten kan startas snabbt. Lösningen kan kräva tätare skydd, loggbaserad återställning eller andra mekanismer för beständighet och återskapande.
+Om verksamheten kräver att ärenden ska kunna öppnas inom fyra timmar, men accepterar att dokumentuppladdning är begränsad längre, kan funktionerna ha olika återställningsprioritet. Om inga bekräftat mottagna dokument får gå förlorade räcker däremot inte en nattlig databaskopia, även om dokumenttjänsten kan startas snabbt. Tätare kopiering kan minska möjlig dataförlust, men uppfyller inte ensam ett mål om noll förlust. Innan mottagandet bekräftas behöver informationen ha säkrats så att den kan återställas efter de fel som skyddet ska omfatta. Både dokumentfiler och nödvändig metadata måste ingå i den bedömningen.
 
 Verksamheten behöver uttrycka **vilka arbetsuppgifter som inte får avbrytas, hur länge de får vara otillgängliga och vilka informationsförluster som kan accepteras**. Applikationsteamen översätter detta till regler för data, beroenden och kompensation. Drift och plattform bedömer vilka tekniska åtgärder som krävs och vilka kostnader de för med sig. Säkerhets- och informationsansvariga behöver delta där lagring, integritet eller regelkrav påverkas.
 
@@ -26,7 +26,7 @@ Säkerhetskopior kan tas på olika nivåer: databas, lagringsobjekt, konfigurati
 
 När flera datalager samverkar finns inte nödvändigtvis någon gemensam tidpunkt då all information kan kopieras atomärt. Att läsa tillbaka två individuellt korrekta kopior kan därför ge en inkonsistent helhet. Lösningen är inte alltid att försöka frysa hela systemet. Det kan vara mer realistiskt att dokumentera vilka data som är auktoritativa, vilka händelser som kan återuppspelas och vilka avvikelser som behöver hanteras genom avstämning eller kompensation.
 
-Säkerhetskopian behöver också kunna användas i en praktisk återställningskedja: rätt version av programvara, databas- och meddelandescheman, krypteringsnycklar och behörigheter måste gå att återskapa eller ersätta. En kopia som inte kan läsas med tillgängliga nycklar har begränsat återställningsvärde.
+Underlaget måste också fungera i praktiken: en krypterad kopia utan tillgängliga nycklar går inte att återläsa. Pröva hela kedjan med de programversioner, scheman och behörigheter som behövs.
 
 En **replika** kan förbättra tillgängligheten men är inte liktydig med en säkerhetskopia. Felaktig radering, korruption och vissa säkerhetsincidenter kan spridas även till repliker. Säkerhetskopior behöver därför ha en genomtänkt skyddsmodell, ofta med separata åtkomsträttigheter och möjlighet att bevara återställningspunkter som inte kan ändras av det ordinarie produktionsflödet. Hur länge kopior bevaras ska styras av fastställda krav, inte av antagandet att mer alltid är bättre.
 
@@ -76,9 +76,9 @@ Det ansvaret kan ligga hos en utsedd tjänsteägare, förvaltningsledning eller 
 
 ## Från att starta servrar till att återfå verksamhetsförmåga
 
-Vårt dokumentexempel visar varför distribuerad arkitektur förändrar återställningsfrågan. Målet är inte bara att ärendetjänsten och dokumenttjänsten åter ska svara på anrop. Målet är att ärenden och dokument åter bildar en tillförlitlig helhet och att användarna vet vilka moment som fungerar, vilka som ännu väntar och vilka uppgifter som kan kräva manuell kontroll.
+Efter återställningen ska ärenden, dokumentmetadata och filer bilda en tillförlitlig helhet. Användarna behöver veta vilka arbetsmoment som fungerar, vilka som väntar och vilka uppgifter som kräver manuell kontroll.
 
-Samtidigt måste denna förmåga finansieras och övas under hela systemets livscykel. Den verkliga kontinuitetsnivån är den organisationen kan visa i en återställningsövning, inte den som enbart står i en plan.
+Återställningsförmågan måste finansieras och övas under hela livscykeln. Övningarna visar vad organisationen klarar i prövade scenarier; oprövade fel och beroenden innebär kvarstående risker.
 
 ### Källor och vidare läsning
 

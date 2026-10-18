@@ -2,7 +2,7 @@
 
 En ny version av dokumenttjänsten klarar alla sina egna tester. Den är driftsatt i integrationsmiljön och svarar snabbt. Ändå kan handläggarna inte längre öppna dokument från ett ärende: ärendetjänsten skickar en förfrågan enligt ett äldre gränssnitt, och dokumenttjänsten förväntar sig ett nytt obligatoriskt fält. Varje team kan med visst fog säga att den egna tjänsten fungerar. Men IT-stödet fungerar inte.
 
-Detta är en grundläggande skillnad mellan att testa en traditionell applikation och att kvalitetssäkra ett distribuerat system. I en monolit kan en gemensam systemversion ofta byggas, installeras och testas som en helhet. Med självständigt utvecklade och driftsatta tjänster finns inte alltid en enda versionskombination som representerar allt som kan möta produktion. Testningen måste därför ge svar på två frågor samtidigt: fungerar tjänsten på egen hand, och fortsätter verksamhetens flöden att fungera när andra tjänster utvecklas oberoende?
+Sådana integrationsfel kan även uppstå i traditionella system, men blir särskilt viktiga att hantera när tjänster levereras självständigt. I en monolit kan en gemensam systemversion ofta byggas, installeras och testas som en helhet. Med självständigt utvecklade och driftsatta tjänster finns inte alltid en enda versionskombination som representerar allt som kan möta produktion. Testningen måste därför ge svar på två frågor samtidigt: fungerar tjänsten på egen hand, och fortsätter verksamhetens flöden att fungera när andra tjänster utvecklas oberoende?
 
 ## Det välbekanta systemtestet räcker inte ensamt
 
@@ -34,7 +34,7 @@ Testnivåerna kompletterar varandra. De är inte en universell pyramid med fasta
 
 Anta att dokumenttjänstens API har version A i produktion. Teamet vill införa version B med en ny egenskap. Ärendetjänsten behöver fortfarande kunna använda de uppgifter den tidigare fått. Ett praktiskt mål är att kunna driftsätta B utan att samtidigt behöva ändra och driftsätta ärendetjänsten.
 
-Det kan uppnås genom bakåtkompatibel förändring: lägg till ett frivilligt fält i stället för att omedelbart kräva det, behåll tidigare beteenden under en övergångsperiod och använd kontraktstester för att se att befintliga konsumenter fortfarande fungerar. I andra fall behövs parallella gränssnitt eller planerade migrationer. Versionering är ett verktyg, inte en ersättning för att förstå konsumenternas verkliga beroenden.
+Det kan uppnås genom bakåtkompatibel förändring: lägg till ett frivilligt fält i stället för att omedelbart kräva det, behåll tidigare beteenden under en övergångsperiod och använd kontraktstester för att se att befintliga konsumenter fortfarande fungerar. I andra fall behövs parallella gränssnitt eller planerade migrationer. Även ett nytt frivilligt svarsfält kan störa en konsument som avvisar okända fält. Kompatibiliteten måste därför prövas mot faktiska konsumenter. Versionering är ett verktyg, inte en ersättning för att förstå konsumenternas verkliga beroenden.
 
 En integrationsmiljö med enbart de *senaste* tjänsteversionerna fångar inte alla problem. Kontraktsverifieringen behöver dessutom använda de kontrakt som faktiskt representerar konsumenter i drift och under den planerade utrullningen; annars kan ett nytt kontrakt felaktigt se kompatibelt ut när en äldre konsument fortfarande använder gränssnittet. Det kan behövas tester mot kombinationer som faktiskt kan förekomma, exempelvis den gamla ärendetjänsten tillsammans med den nya dokumenttjänsten. Det är sällan rimligt att testa varje matematisk kombination av alla tjänsteversioner. Välj i stället kombinationer utifrån uttalade kompatibilitetslöften, beroendekartor, planerad utrullning och identifierade risker.
 
@@ -56,13 +56,13 @@ En miljö som delar kluster med andra får inte beskrivas som isolerad bara för
 
 När den traditionella databasen delas upp kan ett ärende finnas i ärendetjänstens datalager samtidigt som dokumentets metadata och filinnehåll finns någon annanstans. Ett enkelt utdrag ur en databas är då inte säkert ett användbart testfall. Testdata behöver representera ett sammanhängande verksamhetstillstånd även om informationen ägs av flera tjänster.
 
-I dokumentexemplet måste testmiljön kunna skapa ett ärende, koppla det till ett dokument och kontrollera vad som händer om uppladdningen misslyckas efter att ärendet registrerats. Testerna bör omfatta både lyckade flöden och situationer med fördröjda händelser, dubletter, ogiltiga referenser och avbrott.
+I dokumentexemplet måste testmiljön kunna skapa ett ärende, koppla det till ett dokument och kontrollera vad som händer om uppladdningen misslyckas efter att ärendet registrerats. Testerna bör omfatta både lyckade flöden och situationer med fördröjda händelser, dubbletter, ogiltiga referenser och avbrott.
 
 För testdata som bygger på produktionsinformation gäller särskilda krav på integritet, sekretess, åtkomst och gallring. Anonymisering eller maskning behöver bedömas utifrån om uppgifterna faktiskt går att återidentifiera. Syntetiska data är ofta lämpliga, men måste täcka tillräckligt realistiska variationer. Vid flera datalager behövs dessutom kontroller för hur data skapas och städas bort utan att lämna inkonsekventa rester i andra tjänster. Det finns ingen allmän regel om att en kopia av produktionsdatabasen är det bästa testunderlaget.
 
 ## Simulerade beroenden och verkliga integrationer
 
-Kapitel 8 beskrev hur utvecklare kan arbeta lokalt med en simulerad dokumenttjänst. För kvalitetssäkringen uppstår en ny fråga: hur vet vi att simuleringen fortfarande beskriver verkligheten? Om testdubbeln alltid svarar snabbt och aldrig returnerar fel kan den dölja precis de problem som är viktigast att förstå.
+Kapitel 8 beskrev hur dokumentteamet kan arbeta lokalt med en simulerad ärendetjänst. För kvalitetssäkringen uppstår en ny fråga: hur vet vi att simuleringen fortfarande beskriver verkligheten? Om testdubbeln alltid svarar snabbt och aldrig returnerar fel kan den dölja precis de problem som är viktigast att förstå.
 
 En bra strategi är att använda simuleringar för snabba och avgränsade tester, samtidigt som kontrakt och vissa integrationer verifieras mot verkliga implementationer. Testdubblar bör täcka överenskomna felbeteenden och uppdateras när kontrakten ändras. Den övergripande teststrategin behöver också bestämma var verkliga nätverkspolicyer, autentisering och köer ska ingå; annars kan en tjänst se felfri ut i laboratoriet men stoppas i produktion.
 

@@ -24,7 +24,7 @@ Ett möjligt upplägg skiljer på tre roller: incidentledare, tekniska felsökar
 
 ## Felsökning över tjänste- och plattformsgränser
 
-I vårt exempel rapporterar ärendetjänsten att anrop till dokumenttjänsten misslyckas. Dokumenttjänstens egna loggar visar emellertid inte motsvarande begäranden. En sådan skillnad är värdefull information: felet kan ligga före dokumenttjänstens applikationskod, exempelvis i DNS, trafikstyrning, certifikathantering, en nätverkspolicy eller ett felaktigt tjänstenamn.
+I vårt exempel rapporterar ärendetjänsten att anrop till dokumenttjänsten misslyckas. Dokumenttjänstens egna loggar visar emellertid inte motsvarande begäranden. En sådan skillnad är värdefull information: felet kan ligga före dokumenttjänstens applikationskod, exempelvis i DNS, trafikstyrning, certifikathantering, en nätverkspolicy eller ett felaktigt tjänstenamn. Kontrollera samtidigt att loggningen och insamlingen fungerar; frånvaro av en loggpost bevisar inte att begäran aldrig nådde tjänsten.
 
 Teamet bör kontrollera händelsekedjan systematiskt. Har användarens begäran nått ärendetjänsten? Vilken adress försökte ärendetjänsten använda? Blev namnet uppslaget och anslutningen etablerad? Har en lastbalanserare skickat trafiken vidare? Har målinstansen tagit emot anropet och returnerat ett svar? Observerbarheten från föregående kapitel hjälper här, men är ingen ersättning för kunnande om applikationsprotokoll och infrastruktur.
 
@@ -38,7 +38,7 @@ Under en pågående incident är målet först att begränsa skadan och återst�
 
 Men varje åtgärd har risker. Att starta om alla instanser samtidigt kan öka avbrottet. Att automatiskt försöka om ett misslyckat kommando kan ge dubbel behandling om operationen redan utförts. Att återställa en äldre programversion kan vara olämpligt efter en icke-bakåtkompatibel datamigrering. En säker återställningsstrategi måste därför vara förberedd och prövad i förväg, inte uppfinnas under press. Om flera team arbetar parallellt bör varje planerad ändring ha en ansvarig utförare, en tydlig förväntad effekt och ett sätt att verifiera utfallet innan nästa riskfyllda åtgärd görs.
 
-För dokumentincidenten väljer teamen att återställa den tidigare fungerande tjänsteadressen via det ordinarie konfigurationsflödet. De kontrollerar därefter både den tekniska anslutningen och att en användare faktiskt kan öppna dokument från ett ärende. Ett grönt hälsotest räcker inte för att avsluta incidenten. Kontrollera också om misslyckade eller uppskjutna dokumentoperationer behöver återköras, stämmas av eller hanteras manuellt så att informationsläget blir korrekt. Återställd åtkomst och avvecklad incident betyder inte alltid att allt efterarbete är avslutat.
+För dokumentincidenten väljer teamen att återställa den tidigare fungerande tjänsteadressen via det ordinarie konfigurationsflödet. De kontrollerar därefter både den tekniska anslutningen och att en användare faktiskt kan öppna dokument från ett ärende. Ett grönt hälsotest räcker inte för att avsluta incidenten. Kontrollera också om misslyckade eller uppskjutna dokumentoperationer behöver återköras, stämmas av eller hanteras manuellt så att informationsläget blir korrekt. Återställd åtkomst och avslutad incident betyder inte alltid att allt efterarbete är avslutat.
 
 ## Beredskap, eskalering och vägar in till rätt kompetens
 
@@ -50,7 +50,7 @@ Eskaleringen bör bygga på vilket problem som behöver lösas, inte enbart på 
 
 ## Kommunikation och ansvar gentemot användarna
 
-Användaren bryr sig inte om huruvida avbrottet orsakas av dokumenttjänsten, nätverket eller plattformen. Den behöver veta vad som inte fungerar, vilka tillfälliga arbetssätt som finns, vilken risk som föreligger och när en ny lägesrapport kommer. Därför behöver verksamhetskommunikationen vara samlad även om den tekniska felsökningen är fördelad.
+Användarna behöver sällan känna till om avbrottet orsakas av dokumenttjänsten, nätverket eller plattformen. De behöver veta vad som inte fungerar, vilka tillfälliga arbetssätt som finns, vilken risk som föreligger och när en ny lägesrapport kommer. Därför behöver verksamhetskommunikationen vara samlad även om den tekniska felsökningen är fördelad.
 
 Incidentledningen ska undvika tvärsäkra orsaksbeskrivningar innan de är verifierade. Det är bättre att säga att dokumentåtkomst är störd och att berörda team undersöker sambandet mellan tjänsterna än att tidigt peka ut en viss leverantör eller teknik. Om data kan ha gått förlorade eller behandlats felaktigt behöver dessa risker hanteras separat, med rätt verksamhets- och informationsansvariga.
 
@@ -58,7 +58,7 @@ Incidentledningen ska undvika tvärsäkra orsaksbeskrivningar innan de är verif
 
 När dokumentåtkomsten åter fungerar behöver organisationen förstå varför felet kunde uppstå, varför det inte upptäcktes tidigare och varför återställningen tog den tid den gjorde. En efteranalys bör omfatta både tekniska och organisatoriska faktorer: en saknad kontroll av tjänsteadresser, ett otydligt ägarskap för konfigurationen, bristande test av miljöändringar eller svårigheter att nå rätt kompetens.
 
-En bra analys söker förbättringar av systemet och arbetssättet framför att leta syndabockar. Det kan innebära ett automatiserat kontraktstest, en säkrare konfigurationsvalidering, en förbättrad larmregel eller en förändrad eskaleringsrutin. Efteranalysen bör skilja på säkerställda fakta, rimliga hypoteser och sådant som fortfarande är okänt. Varje åtgärd behöver en ansvarig och en uppföljning; annars riskerar slutsatserna att stanna i mötesanteckningarna.
+En bra analys söker förbättringar av systemet och arbetssättet framför att leta syndabockar. Det kan innebära ett automatiserat integrationstest av tjänsteanslutningen, en säkrare konfigurationsvalidering, en förbättrad larmregel eller en förändrad eskaleringsrutin. Efteranalysen bör skilja på säkerställda fakta, rimliga hypoteser och sådant som fortfarande är okänt. Varje åtgärd behöver en ansvarig och en uppföljning; annars riskerar slutsatserna att stanna i mötesanteckningarna.
 
 Det bör också finnas en gräns mot förändringshantering. Ett akut återställande ska dokumenteras, men inte nödvändigtvis tvingas genom samma beslutsförfarande som en planerad större ombyggnad. Förhandsbeslutade nödrutiner kan förena handlingsförmåga med kontroll och efterföljande granskning.
 

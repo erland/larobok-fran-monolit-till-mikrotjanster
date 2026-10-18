@@ -28,7 +28,7 @@ Därför är **oberoende förändringsbarhet och tydligt ägarskap** mer intress
 
 Mikrotjänster kan vara väl motiverade när olika verksamhetsförmågor förändras i tydligt olika takt och det finns team som kan ta ett uthålligt ansvar för respektive tjänst. De kan också ge värde när en del av systemet behöver annan kapacitet, särskild säkerhetsisolering eller en egen tillgänglighetsprofil. Men en separat driftsenhet ger inte automatiskt isolering: delad databas, identitetsplattform, nätverk eller kö kan fortfarande skapa gemensamma fel och angreppsvägar.
 
-I ärendehanteringen kan dokumenttjänsten vara ett sådant fall. Den hanterar filer, lagringslivscykler och kanske stora datamängder, medan ärendetjänsten främst hanterar ärendenas status och arbetsflöden. En väl vald gräns kan göra det möjligt att utveckla dokumentfunktionen separat och att skala lagringen utan att ändra hela ärendehanteringssystemet.
+I ärendehanteringen kan dokumenttjänsten vara ett sådant fall. Den hanterar filer, lagringslivscykler och kanske stora datamängder, medan ärendetjänsten främst hanterar ärendenas status och arbetsflöden. En väl vald gräns kan göra det möjligt att utveckla dokumentfunktionen separat och att anpassa dess bearbetningskapacitet utan att driftsätta resten av ärendehanteringssystemet på nytt. Att enbart skala lagringen kräver däremot inte i sig en separat dokumenttjänst.
 
 Men vinsten uppstår inte automatiskt när processen flyttas till en egen server eller container. Den uppstår först när API-kontrakt, informationsägarskap, driftsättning, testning, incidentberedskap och ansvar gör att teamen faktiskt kan arbeta med mindre inbördes beroenden.
 
@@ -61,7 +61,7 @@ Ett beslutsunderlag kan byggas kring några återkommande frågor:
 3. **Team och mandat:** Kan ett team ansvara för tjänstens utveckling, leverans och operativa beteende över tid, samtidigt som helhetsansvaret är tydligt?
 4. **Driftförmåga:** Har vi tillräcklig automatisering, övervakning, säkerhet, incidenthantering och återställning för den komplexitet vi inför?
 5. **Ekonomi och livscykel:** Vem finansierar gemensamma förmågor, löpande underhåll och en framtida avveckling?
-6. **Alternativ:** Kan samma mål nås med förbättrade moduler, ändrad arbetssätt eller en mindre omfattande uppdelning?
+6. **Alternativ:** Kan samma mål nås med förbättrade moduler, ändrade arbetssätt eller en mindre omfattande uppdelning?
 
 Beslutsunderlaget bör ange vilka antaganden som ännu inte är verifierade, vem som fattar beslutet, vilka alternativ som jämförts och när effekterna ska följas upp. Även en rekommendation att behålla monoliten är ett aktivt arkitekturbeslut som kan behöva omprövas.
 

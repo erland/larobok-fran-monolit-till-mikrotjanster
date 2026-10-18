@@ -14,7 +14,7 @@ I en mikrotjänstarkitektur är **utvecklingsmiljö** inte nödvändigtvis en ko
 
 ## En tjänst i taget – utan att tappa bort helheten
 
-Anta att en utvecklare ska ändra hur dokumentens filnamn visas. För att prova visningsregeln behövs kanske inte en riktig dokumentlagring eller en fullständig ärendehantering. Dokumenttjänsten kan köras lokalt med kontrollerad testinformation och ett simulerat svar från de externa beroendena.
+Anta att en utvecklare ska ändra vilka tecken som tillåts i ett dokumentnamn vid registrering. För att prova valideringsregeln behövs kanske inte en riktig dokumentlagring eller en fullständig ärendehantering. Dokumenttjänsten kan köras lokalt med kontrollerad testinformation och ett simulerat svar från de externa beroendena.
 
 En **testdubbel** kan ersätta en annan tjänst eller ett externt API och ge förutsägbara svar. Det gör utvecklingen snabbare och ger möjlighet att prova fel som är svåra att återskapa i en gemensam miljö. Men en testdubbel bevisar bara hur den egna tjänsten reagerar på det beteende som simuleringen beskriver. Den garanterar inte att den riktiga ärendetjänsten eller identitetsleverantören har samma kontrakt och beteende. Ett simulerat beroende måste därför hållas i takt med verkliga kontrakt, och verkliga integrationer måste verifieras separat. Därför behöver simuleringar kompletteras med kontrakts- och integrationstester längre fram.
 
@@ -26,7 +26,7 @@ En utvecklare upptäcker ett fel som uppträder efter att ett dokument laddats u
 
 Därför blir reproducerbarhet viktigare än att samtliga utvecklare använder exakt samma installation. Det bör gå att få fram kända versioner av relevanta beroenden, kontrollerad konfiguration och testdata som inte röjer produktionsinformation. Hur detta görs kan variera: versionsstyrda miljödefinitioner, automatiserade installationsskript, byggda containeravbilder och kataloger över gemensamma utvecklingstjänster är olika medel för samma mål.
 
-**Konfiguration hör inte hemma som lokala hemligheter i källkoden.** Anslutningsuppgifter, certifikat och nycklar ska hanteras med särskilda mekanismer och separeras mellan miljöer. Testkonton behöver tillräckliga men begränsade rättigheter. Att utvecklingsmiljön är tillfällig gör inte informationssäkerheten oviktig.
+**Skilj versionsstyrbar konfiguration från hemligheter.** Miljödefinitioner och inställningar utan känsligt innehåll kan versionsstyras. Lösenord, åtkomsttoken och privata nycklar ska däremot hållas utanför källkoden och hanteras med särskilda mekanismer, åtskilda mellan miljöer. Testkonton behöver tillräckliga men begränsade rättigheter. Att utvecklingsmiljön är tillfällig gör inte informationssäkerheten oviktig.
 
 ## Delade miljöer löser ett problem men kan skapa ett annat
 
@@ -70,7 +70,7 @@ Här ser vi den viktigaste ansvarsförändringen: driftorganisationen behöver i
 
 En snabb och reproducerbar utvecklingsmiljö gör det lättare att skapa, förstå och rätta tjänster. Men reproducerbar miljö och snabb lokal återkoppling är **förutsättningar**, inte bevis på att hela systemet fungerar. Teststrategi, kompatibilitetskrav och verksamhetskritiska scenarier hör därför till nästa kapitel.
 
-I nästa kapitel går vi därför vidare från miljöernas uppbyggnad till frågan om **hur en helhet av självständigt föränderliga tjänster ska kvalitetssäkras**.
+I nästa kapitel går vi vidare från miljöernas uppbyggnad till frågan om **hur en helhet av självständigt föränderliga tjänster ska kvalitetssäkras**.
 
 ### Källor och vidare läsning
 

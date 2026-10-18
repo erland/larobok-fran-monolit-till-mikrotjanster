@@ -14,7 +14,7 @@ Det är viktigt att inte överdriva skillnaden mot monoliter. Även ett traditio
 
 Tre typer av signaler kompletterar varandra. **Mätvärden** visar exempelvis antal begäranden, felandel, svarstid och ködjup över tid. **Loggar** beskriver enskilda händelser, såsom avvisad uppladdning eller misslyckad databasoperation. **Distribuerade spår** följer delar av en begäran när den passerar mellan olika tjänster.
 
-Ett mätvärde kan visa att registreringstiden ökar. Medelvärden kan samtidigt dölja långa väntetider för en mindre grupp användare; därför kan också fördelningar och höga percentiler behövas. ett spår visa att merparten av tiden tillbringas i dokumenttjänstens lagringsanrop och en logg att ett enskilt försök tidsbegränsades. Inget av verktygen ger ensamt hela förklaringen.
+Ett mätvärde kan visa att registreringstiden ökar. Medelvärden kan samtidigt dölja långa väntetider för en mindre grupp användare; därför kan också fördelningar och höga percentiler behövas. Den 95:e percentilen anger exempelvis den tid som 95 procent av de uppmätta registreringarna understiger eller är lika med. Ett spår kan visa att merparten av tiden tillbringas i dokumenttjänstens lagringsanrop, och en logg kan visa att ett enskilt försök överskred sin tidsgräns. Inget av verktygen ger ensamt hela förklaringen.
 
 För applikationssidan innebär detta att instrumenteringen behöver byggas in i tjänsterna. Strukturerade loggar och konsekventa felkoder ska förklara vad tjänsten försökte göra. För driftsidan innebär det att gemensamma system måste kunna samla in, söka och relatera signaler från tjänster som byter instans och adress över tid. [R15](https://opentelemetry.io/docs/concepts/context-propagation/)
 
@@ -56,7 +56,7 @@ Ett användbart larm anger vad som försämrats, vilket mål som hotas, vem som 
 
 Att samla allt är inte ett mål i sig. Hög loggvolym, långt bevarande och omfattande spårning kan bli kostsamt. Det kan också skapa säkerhets- och integritetsproblem. Samplingsbeslut bör beakta att sällsynta men allvarliga fel annars riskerar att missas. För kritiska händelser kan separata och mer fullständiga signaler behövas. Organisationen behöver därför besluta vad som är nödvändigt, hur länge det lagras, vilka som får läsa uppgifterna och vad som kan reduceras eller samplas utan att viktiga fel blir osynliga.
 
-Även observabilitetsplattformen kan få störningar. Dess fel bör så långt möjligt inte stoppa verksamhetsfunktionerna, och kritiska larm kan behöva alternativa vägar.
+Även observerbarhetsplattformen kan få störningar. Dess fel bör så långt möjligt inte stoppa verksamhetsfunktionerna, och kritiska larm kan behöva alternativa vägar.
 
 ## Vem ansvarar för helhetsbilden?
 

@@ -47,7 +47,7 @@ Det är lätt att säga att ett team ”äger” en tjänst. Svårare är att ve
 1. **Vem ställer kraven?** Exempelvis vem avgör tillgänglighetsnivå och skyddsbehov för dokumenthanteringen?
 2. **Vem fattar beslut?** Vem har mandat att godkänna en ny integrationsväg eller en ändring som påverkar andra tjänster?
 3. **Vem genomför förändringen?** Vem ändrar kod, konfiguration, brandväggsregel eller databasinställning?
-4. **Vem driver och återställer?** Vem reagerar på larm, leder åtgärder och återställer funktionen utanför kontorstid?
+4. **Vem driver och återställer?** Vem reagerar på larm, leder åtgärder och återställer funktionen under överenskomna support- och beredskapstider?
 5. **Vem verifierar och följer upp?** Vem kontrollerar att kraven faktiskt uppfylls efter ändringen?
 
 I praktiken behövs även en tydlig väg för eskalering när flera team berörs eller ingen uppenbart äger orsaken till ett fel. Under en incident bör det vara klart vem som leder arbetet och vem som beslutar om riskfyllda tillfälliga åtgärder.
@@ -56,7 +56,7 @@ Samma grupp kan besvara flera frågor, men inte alltid alla. Att skilja dem åt 
 
 ## Fallet: Dokumenttjänsten kan inte nås
 
-Anta att dokumenttjänsten har fått en ny adress efter en driftsättning och att trafikregler eller tjänsteupptäckt inte har uppdaterats korrekt. Ärendetjänstens anrop misslyckas. I loggarna syns timeout, medan nätverksplattformen visar nekad trafik. Det är ett möjligt felscenario, inte en generell följd av att en tjänst byter adress. Användaren ser bara att dokumentet inte öppnas.
+Anta att dokumenttjänsten har fått en ny adress efter en driftsättning och att trafikregler eller tjänsteupptäckt – mekanismen för att hitta tjänstens aktuella instanser – inte har uppdaterats korrekt. Ärendetjänstens anrop misslyckas. I detta fall överskrider anropen sin tidsgräns, en timeout, medan nätverksplattformen visar nekad trafik. Det är ett möjligt felscenario, inte en generell följd av att en tjänst byter adress. Användaren ser bara att dokumentet inte öppnas.
 
 Den som tar emot användarens felanmälan bör kunna skapa ett sammanhållet ärende och inleda felsökning. Applikationsteamet behöver kunna avgöra vilket anrop som misslyckas och vilka krav som finns på destination och behörighet. Plattformen eller nätverksfunktionen behöver kunna visa hur trafiken dirigeras och vilka regler som gäller. Om en regel behöver ändras måste någon ha mandat att beställa, granska och genomföra ändringen. Till sist behöver någon verifiera att hela användarflödet fungerar igen – inte bara att båda tjänsternas processer är igång.
 

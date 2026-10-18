@@ -2,7 +2,7 @@
 
 Det är frestande att beskriva modernisering som ett före och ett efter. Först har organisationen en monolit, sedan har den ett antal mikrotjänster. I praktiken finns det ofta en lång mellanperiod när gammal och ny arkitektur används samtidigt. Ärendehanteringen körs fortfarande som en sammanhållen applikation på sina virtuella servrar, medan dokumenthanteringen har flyttats till en egen tjänst. Båda lösningarna är produktionskritiska. Båda behöver utvecklas, övervakas, skyddas och förvaltas.
 
-Det svåra är inte bara att få det gamla och nya att tala med varandra. Det svåra är att se till att **övergången faktiskt leder mot en enklare och mer ändamålsenlig målbild**, i stället för att skapa två permanenta tekniska världar som måste hållas vid liv.
+Det svåra är inte bara att få det gamla och nya att tala med varandra. Det svåra är att se till att **övergången faktiskt leder mot en enklare och mer ändamålsenlig målbild**, i stället för att oavsiktligt skapa två tekniska världar som måste hållas vid liv. En varaktig kombination av monolit och fristående tjänster kan däremot vara ett medvetet slutläge, om nyttan, kostnaderna och ansvaren är tydliga.
 
 ## Mellanläget är ett riktigt driftläge
 
@@ -30,7 +30,7 @@ Lagret har samtidigt en kostnad. Om det blir platsen där all ny verksamhetslogi
 
 ## Vem äger informationen under flytten?
 
-En av de riskfyllda övergångarna gäller data. Om både monoliten och dokumenttjänsten får skriva samma dokumentmetadata är det svårt att veta vilken version som är rätt vid en konflikt. Det kan fungera under mycket avgränsade kontrollerade former, men delat skrivansvar får inte bli en omedveten standardlösning.
+En av de riskfyllda övergångarna gäller data. Om både monoliten och dokumenttjänsten får skriva samma dokumentmetadata är det svårt att veta vilken version som är rätt vid en konflikt. Det kan fungera under mycket avgränsade och kontrollerade former, men delat skrivansvar får inte bli en omedveten standardlösning.
 
 Organisationen behöver fastställa **vilken komponent som är auktoritativ för varje uppgift under varje etapp**. Det räcker inte att ange en ägare för hela dokumentet: dokumentinnehåll, metadata, behörighetsbeslut och kopplingen till ärendet kan ha olika ansvariga. För varje uppgift bör läsare, skrivväg och ansvarig vid avvikelse vara dokumenterade. I ett första steg kan monoliten äga äldre metadata och dokumenttjänsten äga nya uppladdningar. I ett senare steg kan dokumenttjänsten ta över allt dokumentinnehåll och all dokumentmetadata medan ärendetjänsten behåller relationen mellan ärende och dokument. Det senare ansvaret kan uttryckas som ett dokument-ID och ett tillstånd, inte som direkt tillgång till dokumenttjänstens tabeller.
 
@@ -82,7 +82,7 @@ Det är lättare att finansiera nyutveckling än att avveckla det sista gamla be
 
 För **applikationsläsaren** innebär samlevnaden att tjänstegränser och informationsägarskap behöver införas gradvis och att gammal kod inte får styra den nya tjänstens interna modell. För **driftläsaren** innebär den att två tekniska världar måste hållas säkra, övervakade och återställningsbara samtidigt, ibland under flera år.
 
-Den gemensamma lärdomen är att mellanläget inte är ett misslyckande – men det måste styras som ett medvetet och tidsbundet arkitekturtillstånd. När dokumenttjänsten väl är fristående är det inte antalet nya tjänster som visar om moderniseringen lyckats. Det är om verksamheten fått en hållbar lösning med tydliga ansvar, fungerande flöden och färre onödiga beroenden.
+Den gemensamma lärdomen är att mellanläget inte är ett misslyckande – men det måste styras med tydliga mål och omprövningstidpunkter. Övergångslösningar behöver avvecklingskriterier; delar som ska finnas kvar långsiktigt behöver ett uttryckligt förvaltningsbeslut. När dokumenttjänsten väl är fristående är det inte antalet nya tjänster som visar om moderniseringen lyckats. Det är om verksamheten fått en hållbar lösning med tydliga ansvar, fungerande flöden och färre onödiga beroenden.
 
 I det avslutande kapitlet återstår därför den viktigaste frågan: När motiverar nyttan med mikrotjänster den distribuerade komplexitet som organisationen nu har lärt sig att hantera?
 

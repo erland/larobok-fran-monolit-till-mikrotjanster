@@ -2,9 +2,9 @@
 
 **Undertitel:** Hur arkitektur, ansvar, utveckling, drift och förvaltning förändras  
 **Författare:** Erland Lindmark  
-**Projektversion:** 5.7.0 (revision 57)
+**Manusversion:** 5.7.0 · **Projektrevision:** 98
 
-Detta är en teknisk faktabok med inledning, 20 färdigskrivna kapitel, källhänvisningar och godkänt omslag. Manuskapitlen är redaktionellt godkända. Fullständigt faktakorrektur och publiceringsgodkännande återstår.
+Detta är en teknisk faktabok med inledning, 20 färdigskrivna kapitel, källhänvisningar och godkänt omslag. Inledningen och samtliga kapitel är redaktionellt slutlästa och justerade. Kapitelvis protokoll finns i `docs/slutlasning-kapitelvis-2026-10-18.md`. Tidigare faktagranskning har kompletterats med riktade källkontroller; slutligt publiceringsgodkännande återstår.
 
 ## Projektstruktur
 
@@ -14,7 +14,7 @@ Detta är en teknisk faktabok med inledning, 20 färdigskrivna kapitel, källhä
 - `assets/cover/omslag.png`: godkänt omslag
 - `publishing/`: sättning och exportstöd
 - `scripts/`: export- och valideringsverktyg
-- `exports/`: **äldre provutgåvor från revision 56**, utan det nya omslaget
+- `exports/`: **äldre provutgåvor från revision 56**, utan det nya omslaget och utan denna slutläsnings rättningar
 
 ## Lokal validering och export
 
