@@ -155,3 +155,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Sammanhållen efterkontroll av ändringarna: tagit bort ett upprepat men i samma stycke.
 - Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 1. Det välbekanta IT-stödet – revision 91
+
+- Sammanhållen efterkontroll: förklarat DBA vid första förekomsten i ansvarstabellen.
+- Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

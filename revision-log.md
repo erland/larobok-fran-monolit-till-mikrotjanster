@@ -139,3 +139,5 @@ Revision 88 (2026-10-18): Slutläst 19-gamla-och-nya-arkitekturer.md; 3 riktade 
 Revision 89 (2026-10-18): Slutläst 20-nar-mikrotjanster-ar-ratt.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 90 (2026-10-18): Slutläst 00-inledning.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 91 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

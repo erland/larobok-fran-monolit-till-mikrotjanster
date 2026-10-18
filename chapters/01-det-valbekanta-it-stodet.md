@@ -39,7 +39,7 @@ En vanlig ansvarsfördelning kan se ut så här:
 | Funktion och applikationskod | Utvecklings- och applikationsförvaltning | Krav, kvalitet, felrättningar och release |
 | Servrar och virtualisering | Infrastrukturdrift | Kapacitet, operativsystem, tillgänglighet och patchning |
 | Nätverk och brandväggar | Nätverksdrift och säkerhetsfunktion | Tillåtna trafikflöden, zoner och felsökning |
-| Databasteknik | DBA eller databasdrift | Installation, prestanda, backup och återställning |
+| Databasteknik | Databasadministratörer (DBA) eller databasdrift | Installation, prestanda, backup och återställning |
 | Behörighet och autentisering | Applikationsansvariga tillsammans med identitetsfunktion | Inloggning, roller, åtkomstkontroll och spårbarhet |
 | Verksamhetsfunktion och prioritering | Systemägare eller verksamhetsnära förvaltning | Nytta, finansiering och förändringsbeslut |
 

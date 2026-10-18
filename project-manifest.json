@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 90,
-  "parent_revision": 89,
+  "revision": 91,
+  "parent_revision": 90,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "fd735ed7b0c81dcdbc5602e4e002913e1eb7a1e15cc0a7ae6bee328aa22600db",
@@ -16,7 +16,7 @@
     "assets/images/README.md": "9f4db1c942af15d160ed05f02e703022199b170aef6a650cbe4d85cb34cb12c1",
     "book.yaml": "cedfa83a43cf729d9f82e0078956ff303cb71faa078790238d0f8a096f884821",
     "chapters/00-inledning.md": "4b166d9d14b83e267d19e66f1d689cd130a92168d3fdda78b2bcb11268c517c3",
-    "chapters/01-det-valbekanta-it-stodet.md": "89c4721ff8100e0748a712a502248f612a9da2892aa1fe0fe09f5f618d966530",
+    "chapters/01-det-valbekanta-it-stodet.md": "1cb73bc990ce0acf3d47289ff0e2aa4c3076cb9779da67d49d61ef7e03768966",
     "chapters/02-nar-systemet-delas-upp.md": "1f8f15677405263118a293845fd68cc0e33dae3e4af28275005bbfb4979d446a",
     "chapters/03-ansvar-i-distribuerat-system.md": "dd9178a37d202165dbd0262d5c2cbb821520a3bd69bad6dbf3644f1d5a03614e",
     "chapters/04-hur-systemet-delas-upp.md": "2630b334a386dd7d96320db758fae12c1caef0a0906061e98f938f11dbc03a87",
@@ -83,7 +83,7 @@
     "docs/samlad-referenskontroll-revision-55.md": "84fa5cfee1f9b9610a8be101ddc604b1cff79eca85abeab6fea00ac8f1018b10",
     "docs/slutgranskning-publicering-2026-10-17.md": "6baf9f95c4a4ba81e2d9454887169105e6b1bcdc7ffa0c333af25ae2ce67da76",
     "docs/slutkorrektur-och-provexport-revision-56.md": "c8fa509de625f425a00f6668eafac661437d82ae0118fc2985040945591a6b39",
-    "docs/slutlasning-kapitelvis-2026-10-18.md": "11c15114355ecdc4e6b8da3473959a5f457f5750e09424a4f57bba662e3e6bad",
+    "docs/slutlasning-kapitelvis-2026-10-18.md": "08ba511ed4e53725ac55c198bca297c2aa8af867dfab203e41363cb6c0a1f0bc",
     "docs/terminologi.md": "2ebb5ee736cbf7dade016e7e6a252189f0191edb1a752c097b9d8dce737b90ba",
     "examples/README.md": "70a55086000ab162157b80abc348dab55a357b3984d1ad6baa7b52d723149916",
     "project-index.md": "21bcb913ed5e069d898c501b141e49c21b2bc5eb8e3dd5c80d911e67deed1f67",
@@ -92,7 +92,7 @@
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
     "publishing/pdf-filter.lua": "31c57369f4d0fe1993af4e3f0b4f3d8d6172d5f116e3d7480f0f075a25fd9e38",
     "publishing/pdf-template.tex": "83b34664f86cd251715c9e941953fb8476d6e43a24fa7085bcbf87baba129d84",
-    "revision-log.md": "3aa5438776b388d08f2693f4d1d01ebb34d6e25aa70726c39ce2cfedd333b840",
+    "revision-log.md": "cf18ca4bd125776d44c99ce33a42cbca5a7db1bc8135437b65885599fe07f364",
     "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
     "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973",
     "scripts/export-book.py": "8324321274c0e2bba820ffad9c47584d7faf381cf8447e90e848a3548303b7c0",
@@ -102,6 +102,6 @@
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7"
   },
   "chapters": {},
-  "last_operation": "Kapitelvis slutläsning: 00-inledning.md",
+  "last_operation": "Kapitelvis slutläsning: 01-det-valbekanta-it-stodet.md",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }
