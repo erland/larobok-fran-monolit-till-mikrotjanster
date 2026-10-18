@@ -170,3 +170,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Sammanhållen efterkontroll: förenklat meningen om kontrollen av trafikberedskap.
 - Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 16. Hur hanterar vi livscykler, underhåll och teknisk skuld? – revision 94
+
+- Sammanhållen efterkontroll: rättat kongruensen efter ändringen till en programvaruförteckning i singular.
+- Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

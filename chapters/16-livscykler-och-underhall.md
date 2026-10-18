@@ -26,7 +26,7 @@ Förvaltningen behöver kunna svara på vilka tjänster som påverkas när en s�
 
 Informationskällorna kompletterar varandra. Tjänstekatalogen svarar på *vem och vad*; bygg- och artefaktinformationen svarar på *vilken version*; driftens observationer svarar på *vad som faktiskt körs*. Om katalogen anger en uppdaterad version men produktionsmiljön fortfarande kör den gamla är förvaltningsproblemet inte löst. Därför behöver inventering och uppföljning knytas till verkliga driftsättningar och granskas vid avvikelser.
 
-En programvaruförteckning, en SBOM (Software Bill of Materials), kan ge stöd, men de bevisar inte ensamma att programvaran är fri från sårbarheter. Resultaten behöver sättas i relation till hur komponenten används, om den exponerade funktionen faktiskt är nåbar och vilka skydd som finns runt tjänsten.
+En programvaruförteckning, en SBOM (Software Bill of Materials), kan ge stöd, men den bevisar inte ensam att programvaran är fri från sårbarheter. Resultaten behöver sättas i relation till hur komponenten används, om den exponerade funktionen faktiskt är nåbar och vilka skydd som finns runt tjänsten.
 
 ## API:er och händelser lever längre än en enskild driftsättning
 

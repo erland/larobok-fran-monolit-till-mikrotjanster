@@ -145,3 +145,5 @@ Revision 91 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 1 riktade te
 Revision 92 (2026-10-18): Slutläst 07-ansvar-for-information.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 93 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 94 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
