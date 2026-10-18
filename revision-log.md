@@ -101,3 +101,5 @@ Revision 69 (2026-10-18): Slutläst 00-inledning.md; 2 riktade textjusteringar. 
 Revision 70 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 71 (2026-10-18): Slutläst 02-nar-systemet-delas-upp.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 72 (2026-10-18): Slutläst 03-ansvar-i-distribuerat-system.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

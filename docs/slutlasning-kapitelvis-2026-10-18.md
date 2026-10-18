@@ -23,3 +23,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst partiella fel, inventering, ansvar och jämförelsetabell. De korta tabellrubrikerna från föregående layoutkorrigering bevaras.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 3. Vem ansvarar för vad när systemet blir distribuerat? – revision 72
+
+- Kopplat incidentberedskap till överenskomna tider i stället för att underförstå dygnet-runt-ansvar.
+- Förklarat tjänsteupptäckt och timeout i det konkreta felscenariot; markerat att just den observerade felbilden gäller exemplet.
+- Genomläst samtliga fyra ansvarsnivåer, fem ansvarsfrågor och ansvarstabellen; mandat, kontroll och skillnaden mot kapitel 18 är tydligt avgränsade.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
