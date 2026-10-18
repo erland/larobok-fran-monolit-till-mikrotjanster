@@ -51,3 +51,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst synkron/asynkron kommunikation, säkerhetskontroller, ansvarstabell och scenariots lösning. Riktad kontroll 2026-10-18 mot R6 och AWS Builders Library, https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/. Ersatt ett oförklarat matrisnamn med ansvarsmatris.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 7. Vem ansvarar för informationen? – revision 76
+
+- Rättat en syftning om ärendetjänstens läsmodell och språkformen verksamhetsinformation.
+- Kompletterat glappet mellan lagrad data och publicerad händelse med en kort, teknikneutral beskrivning av beständig publiceringsavsikt; behovet av dubbletthantering kvarstår.
+- Genomläst informationsansvar, isolering, mellanlägen, kompensation, eventual consistency och migrering. Riktad kontroll 2026-10-18 mot R7 och AWS Prescriptive Guidance, https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html. Det tillagda felscenariot är en förklaring av tillförlitlig händelsespridning, inte ett löfte om exakt-en-gång-leverans.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
