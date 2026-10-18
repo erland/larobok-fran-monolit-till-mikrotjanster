@@ -26,7 +26,7 @@ Säkerhetskopior kan tas på olika nivåer: databas, lagringsobjekt, konfigurati
 
 När flera datalager samverkar finns inte nödvändigtvis någon gemensam tidpunkt då all information kan kopieras atomärt. Att läsa tillbaka två individuellt korrekta kopior kan därför ge en inkonsistent helhet. Lösningen är inte alltid att försöka frysa hela systemet. Det kan vara mer realistiskt att dokumentera vilka data som är auktoritativa, vilka händelser som kan återuppspelas och vilka avvikelser som behöver hanteras genom avstämning eller kompensation.
 
-Säkerhetskopian behöver också kunna användas i en praktisk återställningskedja: rätt version av programvara, databas- och meddelandescheman, krypteringsnycklar och behörigheter måste gå att återskapa eller ersätta. En kopia som inte kan läsas med tillgängliga nycklar har begränsat återställningsvärde.
+Underlaget måste också fungera i praktiken: en krypterad kopia utan tillgängliga nycklar går inte att återläsa. Pröva hela kedjan med de programversioner, scheman och behörigheter som behövs.
 
 En **replika** kan förbättra tillgängligheten men är inte liktydig med en säkerhetskopia. Felaktig radering, korruption och vissa säkerhetsincidenter kan spridas även till repliker. Säkerhetskopior behöver därför ha en genomtänkt skyddsmodell, ofta med separata åtkomsträttigheter och möjlighet att bevara återställningspunkter som inte kan ändras av det ordinarie produktionsflödet. Hur länge kopior bevaras ska styras av fastställda krav, inte av antagandet att mer alltid är bättre.
 
@@ -76,9 +76,9 @@ Det ansvaret kan ligga hos en utsedd tjänsteägare, förvaltningsledning eller 
 
 ## Från att starta servrar till att återfå verksamhetsförmåga
 
-Vårt dokumentexempel visar varför distribuerad arkitektur förändrar återställningsfrågan. Målet är inte bara att ärendetjänsten och dokumenttjänsten åter ska svara på anrop. Målet är att ärenden och dokument åter bildar en tillförlitlig helhet och att användarna vet vilka moment som fungerar, vilka som ännu väntar och vilka uppgifter som kan kräva manuell kontroll.
+Efter återställningen ska ärenden, dokumentmetadata och filer bilda en tillförlitlig helhet. Användarna behöver veta vilka arbetsmoment som fungerar, vilka som väntar och vilka uppgifter som kräver manuell kontroll.
 
-Samtidigt måste denna förmåga finansieras och övas under hela systemets livscykel. Återställningsövningar ger belägg för vad organisationen klarar i de prövade scenarierna. En plan behöver stödjas av sådana resultat, samtidigt som oprövade fel och beroenden kan innebära kvarstående risker.
+Återställningsförmågan måste finansieras och övas under hela livscykeln. Övningarna visar vad organisationen klarar i prövade scenarier; oprövade fel och beroenden innebär kvarstående risker.
 
 ### Källor och vidare läsning
 

@@ -189,3 +189,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Provexportens korta kapitelavslut har åtgärdats genom att koncentrera två upprepande slutstycken. Samtliga sakkrav om undantag, resursgränser, självständighet och plattformskontrakt bevaras.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – 17. Hur säkerställer vi återställning, kontinuitet och kostnadskontroll? – revision 96
+
+- Provexporten gav en sida med enbart källrubrik och R20. Tre upprepande stycken har koncentrerats utan att ta bort återställningskrav, nyckelberoenden, användarinformation eller begränsningen till prövade scenarier. Omexport används för att kontrollera att källposten ryms med kapitelavslutet.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

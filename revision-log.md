@@ -149,3 +149,5 @@ Revision 93 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 1 riktade text
 Revision 94 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 1 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 95 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 96 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
