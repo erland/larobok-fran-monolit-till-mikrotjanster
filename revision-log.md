@@ -121,3 +121,5 @@ Revision 79 (2026-10-18): Slutläst 10-leverera-forandringar.md; 4 riktade textj
 Revision 80 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 81 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 82 (2026-10-18): Slutläst 13-observerbarhet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

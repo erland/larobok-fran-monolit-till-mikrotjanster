@@ -94,3 +94,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Rättat vilka delar som upprepas vid återförsök: det är begäranden som kan ge dubbel verksamhetseffekt när svar uteblir. Genomläst timeout, återförsök, circuit breaker, resursisolering, kölagring och säker degradering.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 13. Hur vet vi att hela IT-stödet fungerar? – revision 82
+
+- Rättat en trasig mening om spår och loggar som saknade både inledande versal och hjälpverb.
+- Förklarat percentil med registreringstid som konkret exempel och förtydligat att en tidsgräns överskrids.
+- Använt observerbarhet konsekvent. Genomläst korrelation, SLI/SLO/SLA, asynkron status, syntetiska kontroller, larm, sampling, känsliga logguppgifter och plattformens egna avbrott. Kapitlets tidigare layoutanpassade avslut har inte byggts ut.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
