@@ -97,3 +97,5 @@ Revision 56 (2026-10-17): Korrektur- och provexportarbete genomfört. PDF och EP
 Revision 57 (2026-10-17): Godkänd omslagsbild sparad i `assets/cover/omslag.png`; projektmetadata och EPUB-export uppdaterade. Kapiteltexter oförändrade.
 
 Revision 69 (2026-10-18): Slutläst 00-inledning.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 70 (2026-10-18): Slutläst 01-det-valbekanta-it-stodet.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

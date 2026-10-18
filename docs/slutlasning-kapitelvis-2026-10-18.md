@@ -9,3 +9,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Målgrupp, förkunskaper, teknikneutralitet, fiktivt scenario och källavsnitt genomlästa; inga interna arbetsinstruktioner finns i inledningen.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 1. Det välbekanta IT-stödet – revision 70
+
+- Rättat en otydlig syftning i definitionen av monolit och tonat ned ett obelagt generellt påstående om organisationers miljöer.
+- Skilt mellan nätverksanrop till databasen och separata tjänsteanrop: en gemensam databas innebär inte att nätverket försvinner.
+- Kontrollerat ansvarstabell, transaktionsresonemang, driftperspektiv, långsiktig förvaltning och övergången till dokumenttjänsten; den balanserade jämförelsen bevaras.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
