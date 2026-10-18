@@ -72,3 +72,11 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Förtydligat att frivilliga svarsfält inte automatiskt är kompatibla med alla klienter. Genomläst testnivåer, versionskombinationer, data, miljöisolering och acceptanskriterier; standardiserat stavningen dubbletter.
 - Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 10. Hur levererar vi förändringar utan att störa helheten? – revision 79
+
+- Förklarat CI och kontinuerlig leverans samt skillnaden mellan leveransberedskap och beslut om produktionssättning.
+- Samordnat konfigurationsbeskrivningen med kapitel 8 och skilt programåtergång från återställning av körande container eller data.
+- Rättat scenariots hänvisning till ett äldre fält som inte tidigare introducerats; avvecklingen gäller nu det äldre kontraktet.
+- Genomläst stegvis utrullning, händelsekonsumenter, rollback/roll-forward, mandat och produktionsuppföljning. Inga löften om riskfri driftsättning införs.
+- Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

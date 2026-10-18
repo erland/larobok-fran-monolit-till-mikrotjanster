@@ -14,9 +14,9 @@ Målet är inte att alla team måste driftsätta varje dag. Målet är att en f�
 
 ## En leveranskedja som kan upprepas och granskas
 
-En hållbar leverans börjar innan någon trycker på knappen för driftsättning. Källkod och konfiguration versionshanteras. Bygget ger en identifierbar artefakt som testas, kontrolleras och helst förs vidare oförändrad genom miljöerna. Om samma källa byggs om med andra beroenden vid produktionstillfället är det svårare att veta om man verkligen driftsätter det som testats.
+En hållbar leverans börjar innan någon trycker på knappen för driftsättning. Källkod och konfiguration utan hemligheter versionshanteras; hemligheternas användning och ändringar hanteras separat med kontrollerad åtkomst och spårbarhet. Bygget ger en identifierbar artefakt som testas, kontrolleras och helst förs vidare oförändrad genom miljöerna. Om samma källa byggs om med andra beroenden vid produktionstillfället är det svårare att veta om man verkligen driftsätter det som testats.
 
-En automatisk leveranskedja (CI/CD) kan exempelvis kontrollera kod, beroenden och sårbarheter, köra relevanta tester, paketera artefakten, dokumentera resultatet och tillämpa de godkännanden som krävs för produktion. Det betyder inte att alla kontroller ska vara automatiska. En verksamhetskritisk ändring kan behöva särskild riskbedömning eller ett tidsatt beslut. Skillnaden är att kontrollerna kan göras **spårbara och återkommande**, i stället för att bero på manuellt återkommande installationssteg.
+Kontinuerlig integration (CI) innebär att ändringar integreras och kontrolleras ofta. Kontinuerlig leverans (CD) håller programvaran redo att driftsättas; själva produktionssättningen kan fortfarande kräva ett beslut. En automatisk leveranskedja kan exempelvis kontrollera kod, beroenden och sårbarheter, köra relevanta tester, paketera artefakten, dokumentera resultatet och tillämpa de godkännanden som krävs för produktion. Det betyder inte att alla kontroller ska vara automatiska. En verksamhetskritisk ändring kan behöva särskild riskbedömning eller ett tidsatt beslut. Skillnaden är att kontrollerna kan göras **spårbara och återkommande**, i stället för att bero på manuellt återkommande installationssteg.
 
 Även leveranskedjans egna behörigheter, byggberoenden och skyddsmekanismer behöver granskas. Ett godkänt automatiserat flöde innebär inte att varje förändring är riskfri.
 
@@ -42,7 +42,7 @@ Ingen utrullningsmodell garanterar att verksamheten slipper påverkan. För doku
 
 ## Rollback är inte alltid att backa bandet
 
-Om den nya dokumenttjänsten ger fel vill vi snabbt kunna återgå till den tidigare programversionen. Men vad händer om den nya versionen redan har ändrat databasens struktur eller skickat nya händelser? Att återställa en äldre container gör inte dessa förändringar ogjorda. En tidigare version kanske inte ens kan läsa de nya uppgifterna.
+Om den nya dokumenttjänsten ger fel vill vi snabbt kunna återgå till den tidigare programversionen. Men vad händer om den nya versionen redan har ändrat databasens struktur eller skickat nya händelser? Att starta den tidigare programversionen gör inte dessa förändringar ogjorda. En tidigare version kanske inte ens kan läsa de nya uppgifterna.
 
 Därför behöver beslut om **rollback eller roll-forward** ingå i förändringens design. Teamen behöver i förväg bestämma vad som kan återställas, vilka mätvärden som ska utlösa ett stopp och vem som får fatta beslut om att avbryta införandet. Rollback kan vara lämpligt när gränssnitt och data fortfarande är kompatibla. Roll-forward innebär att felet rättas genom en ny framåtriktad ändring. Vid vissa datamigreringar behövs särskilda återställnings- eller kompensationsåtgärder. Att återläsa en databas är ett annat, större ingrepp som även kan påverka andra tjänster och dataägare.
 
@@ -68,7 +68,7 @@ Före driftsättning behöver det exempelvis vara bestämt vem som kan avbryta e
 
 ## En förändring i ärendehanteringssystemet
 
-Dokumentteamet vill driftsätta klassificeringsfältet innan ärendeteamet har hunnit uppdatera sin vy. Teamen kommer överens om att dokumenttjänsten först accepterar och returnerar den gamla representationen, samtidigt som den nya representationen kan aktiveras separat. Databasändringen görs additivt. Det finns en plan för när det äldre fältet senare får avvecklas.
+Dokumentteamet vill driftsätta klassificeringsfältet innan ärendeteamet har hunnit uppdatera sin vy. Teamen kommer överens om att dokumenttjänsten fortsätter stödja det gamla kontraktet och erbjuder den nya representationen separat. Det nya fältet är frivilligt i befintliga registreringsanrop. Databasändringen görs genom tillägg som äldre programversioner fortfarande kan använda. Det finns kriterier för när stödet för det äldre kontraktet senare får avvecklas.
 
 En ny artefakt byggs och verifieras. Teamen har i förväg bestämt när den standardiserade förändringsvägen är tillräcklig och när ett särskilt godkännande krävs. Plattformens leveransflöde rullar ut den till en begränsad del av trafiken. Under införandet följer teamen både tekniska fel och om handläggare kan lägga till och öppna dokument. Om något försämras kan den nya funktionen stängas av utan att den gemensamma dokumenthanteringen behöver tas ur drift. Det är ett valt scenario: i verkligheten behöver även händelseflöden, last och datamigrering analyseras innan en liknande metod väljs.
 

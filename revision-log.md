@@ -115,3 +115,5 @@ Revision 76 (2026-10-18): Slutläst 07-ansvar-for-information.md; 3 riktade text
 Revision 77 (2026-10-18): Slutläst 08-utvecklingsmiljoer.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 78 (2026-10-18): Slutläst 09-testmiljoer-och-kvalitet.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 79 (2026-10-18): Slutläst 10-leverera-forandringar.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
