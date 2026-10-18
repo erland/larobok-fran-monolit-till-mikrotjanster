@@ -119,3 +119,5 @@ Revision 78 (2026-10-18): Slutläst 09-testmiljoer-och-kvalitet.md; 4 riktade te
 Revision 79 (2026-10-18): Slutläst 10-leverera-forandringar.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 80 (2026-10-18): Slutläst 11-gemensamma-plattformsformagor.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 81 (2026-10-18): Slutläst 12-nar-en-tjanst-fallerar.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

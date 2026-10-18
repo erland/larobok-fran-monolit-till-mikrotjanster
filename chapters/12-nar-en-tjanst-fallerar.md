@@ -50,7 +50,7 @@ Andra funktioner bör däremot stoppa helt när ett beroende fallerar. Om verksa
 
 ## När ett meddelande blir liggande
 
-För asynkron kommunikation ser felet annorlunda ut. Ärendetjänsten kan ha skickat en händelse om att ett dokument ska bearbetas, samtidigt som dokumenttjänsten är otillgänglig. Meddelandet kan då ligga kvar i en kö eller ström, under förutsättning att infrastrukturen är byggd för det. Användaren behöver veta om dokumentet väntar på behandling, misslyckats eller är färdigt.
+För asynkron kommunikation ser felet annorlunda ut. Ärendetjänsten kan ha skickat ett meddelande med en begäran om dokumentbearbetning, samtidigt som dokumenttjänsten är otillgänglig. En sådan begäran beskriver önskat arbete; en händelse beskriver i stället något som redan inträffat, till exempel att dokumentet har registrerats. Meddelandet kan då ligga kvar i en kö eller ström, under förutsättning att infrastrukturen är byggd för det. Användaren behöver veta om dokumentet väntar på behandling, misslyckats eller är färdigt.
 
 Köer kopplar loss två tjänsters exekveringstidpunkter men tar inte bort fel. En växande kö kan signalera att mottagaren inte hinner med. Vissa meddelanden kan behöva hanteras flera gånger, komma i annan ordning än väntat eller hamna i en särskild hantering för upprepade fel. Systemet behöver bestämda regler för fördröjningar, återförsök, idempotens, felaktiga meddelanden och hur verksamheten kan rätta ett fastnat flöde.
 
@@ -60,7 +60,7 @@ En kö kan alltså förbättra tåligheten vid tillfälliga avbrott, men den int
 
 En plattform kan övervaka om dokumenttjänstens instanser körs och om de kan ta emot trafik. Sådana hälsokontroller är viktiga, men de räcker inte för att avgöra om handläggaren faktiskt kan öppna ett dokument. En instans kan svara på hälsokontroller samtidigt som dess datalager är mycket långsamt eller ett beroende är felkonfigurerat.
 
-Hälsokontroller för **om instansen lever** och **om den bör få trafik** behöver utformas med eftertanke. Om beredskapskontrollen gör varje instans oanvändbar så snart ett gemensamt externt beroende fallerar, kan hela tjänsten tas ur trafik utan att någon annan instans kan hjälpa. Samtidigt får en instans som faktiskt inte kan ta emot begäran inte felaktigt markeras redo.
+Hälsokontroller för **om instansen lever** och **om den bör få trafik** behöver utformas med eftertanke. Om kontrollen av om instansen är redo för trafik gör varje instans oanvändbar så snart ett gemensamt externt beroende fallerar, kan hela tjänsten tas ur trafik utan att någon annan instans kan hjälpa. Samtidigt får en instans som faktiskt inte kan ta emot begäran inte felaktigt markeras redo.
 
 Utöver tekniska kontroller behöver organisationen följa verkliga verksamhetsflöden: går det att öppna ett ärende, läsa dess dokument och slutföra en registrering? Metoderna för hur detta mäts och visualiseras behandlas i nästa kapitel om observerbarhet.
 
@@ -68,7 +68,7 @@ Utöver tekniska kontroller behöver organisationen följa verkliga verksamhetsf
 
 I en traditionell miljö kan driftorganisationen vara van att hantera tillgänglighet genom redundanta VM:ar, lastbalanserare och omstarter. Dessa åtgärder behövs ofta fortfarande. Men de kan inte på egen hand avgöra hur ett användargränssnitt ska reagera när ett beroende svarar för sent eller när en ändring kanske redan har utförts.
 
-**Applikationsteamet** behöver därför beskriva vilka beroenden som är kritiska, välja tidsgränser och återförsök, utforma ett säkert användarbeteende samt se till att operationer fungerar när svar försvinner eller levereras flera gånger. **Drift- och plattformsteam** behöver bidra med kunskap om verkliga felmoder, kapacitetsgränser, redundans, trafikstyrning, resursisolering och återhämtningsmekanismer. **Verksamhetsansvariga** behöver ange vilka funktioner som måste fungera, hur länge avbrott kan tolereras och när en osäker status är oacceptabel.
+**Applikationsteamet** behöver därför beskriva vilka beroenden som är kritiska, välja tidsgränser och återförsök, utforma ett säkert användarbeteende samt se till att operationer fungerar när svar försvinner eller begäranden upprepas. **Drift- och plattformsteam** behöver bidra med kunskap om verkliga felmoder, kapacitetsgränser, redundans, trafikstyrning, resursisolering och återhämtningsmekanismer. **Verksamhetsansvariga** behöver ange vilka funktioner som måste fungera, hur länge avbrott kan tolereras och när en osäker status är oacceptabel.
 
 Ingen av dessa roller kan ensam garantera helheten. Kraven måste omsättas i gemensamt beslutade scenarier och verifieras genom feltester, exempelvis att stoppa en tjänsteinstans, blockera en anslutning eller begränsa kapaciteten i en kontrollerad miljö. Feltester i produktion kan också vara relevanta, men bara under överenskomna säkerhets- och riskvillkor. Vem som får initiera sådana tester och vem som leder en verklig incident behöver vara explicit bestämt. Det behöver också finnas överenskomna mål för hur mycket funktionalitet som får försämras och hur snabbt normal funktion ska återupptas.
 

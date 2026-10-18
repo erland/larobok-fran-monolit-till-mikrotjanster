@@ -87,3 +87,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Skilt den deklarativa modellen i exemplet från det bredare begreppet infrastruktur som kod. Genomläst plattformserbjudande, självbetjäningsramar, databasansvar och plattformens egen förvaltning.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 12. Vad händer när en tjänst slutar fungera? – revision 81
+
+- Skilt begäran om arbete från händelser om redan inträffade förändringar i det asynkrona exemplet.
+- Förtydligat readiness-kontrollen så att den inte förväxlas med organisatorisk beredskap.
+- Rättat vilka delar som upprepas vid återförsök: det är begäranden som kan ge dubbel verksamhetseffekt när svar uteblir. Genomläst timeout, återförsök, circuit breaker, resursisolering, kölagring och säker degradering.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
