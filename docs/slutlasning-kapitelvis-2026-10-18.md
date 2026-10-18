@@ -65,3 +65,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst testdubblar, reproducerbarhet, isolering, syntetiska testdata och rollfördelning. Tagit bort ett överflödigt därför i övergången till kapitel 9.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 9. Hur förändras testmiljöer och kvalitetssäkring? – revision 78
+
+- Rättat kontinuitetsfelet: kapitel 8 låter dokumentteamet simulera ärendetjänsten, inte tvärtom.
+- Nyanserat jämförelsen så att integrationsfel inte framställs som unika för mikrotjänster.
+- Förtydligat att frivilliga svarsfält inte automatiskt är kompatibla med alla klienter. Genomläst testnivåer, versionskombinationer, data, miljöisolering och acceptanskriterier; standardiserat stavningen dubbletter.
+- Utfall: genomläst; 4 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

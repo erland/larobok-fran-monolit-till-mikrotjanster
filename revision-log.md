@@ -113,3 +113,5 @@ Revision 75 (2026-10-18): Slutläst 06-hur-tjanster-kommunicerar.md; 3 riktade t
 Revision 76 (2026-10-18): Slutläst 07-ansvar-for-information.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 77 (2026-10-18): Slutläst 08-utvecklingsmiljoer.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 78 (2026-10-18): Slutläst 09-testmiljoer-och-kvalitet.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
