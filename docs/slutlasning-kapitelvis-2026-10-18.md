@@ -150,3 +150,8 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst hela slutkapitlet inklusive beslutsfrågor, alternativ, kostnader, stegvis prövning och slutord. Avslutningen återknyter till båda målgrupperna och rekommenderar inte fler tjänster som självändamål.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+### Efterkontroll – Inledning – revision 90
+
+- Sammanhållen efterkontroll av ändringarna: tagit bort ett upprepat men i samma stycke.
+- Utfall: genomläst; 1 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

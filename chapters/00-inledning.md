@@ -4,7 +4,7 @@ Ett IT-stöd kan se enkelt ut från användarens perspektiv. En handläggare öp
 
 I ett traditionellt system är mycket av detta samlat. Frontend, backend och databas ingår ofta i en gemensam installation eller åtminstone i en samordnad livscykel. Det finns kända servrar och miljöer, etablerade driftinstruktioner och ofta en tydlig väg från ändringsbeställning till driftsättning. Även när många personer och leverantörer är inblandade finns det ett system att peka på.
 
-När samma verksamhetsstöd delas upp i mikrotjänster förändras förutsättningarna. Funktioner som tidigare anropade varandra inom samma applikation kan behöva kommunicera över nätverk. Information som tidigare uppdaterades i en gemensam databas kan ligga under olika tjänsters ansvar. Tjänster kan driftsättas och uppgraderas var för sig när deras gränssnitt är kompatibla. De kan också sluta fungera var för sig, men fel kan spridas genom beroenden mellan dem. Men användaren förväntar sig fortfarande att *ärendehanteringen* fungerar som en helhet.
+När samma verksamhetsstöd delas upp i mikrotjänster förändras förutsättningarna. Funktioner som tidigare anropade varandra inom samma applikation kan behöva kommunicera över nätverk. Information som tidigare uppdaterades i en gemensam databas kan ligga under olika tjänsters ansvar. Tjänster kan driftsättas och uppgraderas var för sig när deras gränssnitt är kompatibla. De kan också sluta fungera var för sig, men fel kan spridas genom beroenden mellan dem. Användaren förväntar sig fortfarande att *ärendehanteringen* fungerar som en helhet.
 
 Det är denna förskjutning boken handlar om: **från en samordnad applikation till en distribuerad lösning som fortfarande måste leverera ett sammanhållet IT-stöd**.
 
