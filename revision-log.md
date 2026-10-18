@@ -131,3 +131,5 @@ Revision 84 (2026-10-18): Slutläst 15-sakerhet-och-identitet.md; 2 riktade text
 Revision 85 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 86 (2026-10-18): Slutläst 17-aterstallning-kontinuitet-kostnad.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 87 (2026-10-18): Slutläst 18-ansvar-och-styrning.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

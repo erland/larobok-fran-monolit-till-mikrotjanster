@@ -129,3 +129,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Begränsat slutsatsen av en återställningsövning till vad den faktiskt prövat. Genomläst kopior/repliker, återuppspelning, sidoeffekter, avstämning, prioriteringsordning och kostnadsavvägningar. Riktad kontroll 2026-10-18 av R20:s publiceringspost och kontinuitetsinriktning; ingen ny heltäckande standardgranskning påstås.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 18. Hur organiserar vi ansvar och styrning över tid? – revision 87
+
+- Samordnat ansvarsmodellen med kapitel 3: säkerhets- och informationskrav är fortsatt tvärgående uppdrag, och helhetssamordningen beskrivs utan en missvisande sifferrubrik.
+- Rättat sammansättningen plattforms- och driftansvar och tagit bort ett oförklarat ramverksnamn.
+- Genomläst mandat, undantag, finansiering, gemensamma mål, incidentuppföljning, leverantörsgränser och överlämning när team upphör. Avgränsningen mot den praktiska incidenthanteringen bevaras.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
