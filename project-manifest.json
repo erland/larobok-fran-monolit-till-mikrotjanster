@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 73,
-  "parent_revision": 72,
+  "revision": 74,
+  "parent_revision": 73,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "fd735ed7b0c81dcdbc5602e4e002913e1eb7a1e15cc0a7ae6bee328aa22600db",
@@ -20,7 +20,7 @@
     "chapters/02-nar-systemet-delas-upp.md": "1f8f15677405263118a293845fd68cc0e33dae3e4af28275005bbfb4979d446a",
     "chapters/03-ansvar-i-distribuerat-system.md": "dd9178a37d202165dbd0262d5c2cbb821520a3bd69bad6dbf3644f1d5a03614e",
     "chapters/04-hur-systemet-delas-upp.md": "2630b334a386dd7d96320db758fae12c1caef0a0906061e98f938f11dbc03a87",
-    "chapters/05-var-tjansterna-kors.md": "9a1a8ed2e829f39b9de4c59e3888f2cb8f1ae398ebce630c706e864b6f926e5d",
+    "chapters/05-var-tjansterna-kors.md": "e8cdf6700ef784c132ae45e92f886519da160f780de22c302d21059a7fb71e47",
     "chapters/06-hur-tjanster-kommunicerar.md": "9273e9a2fed1acb48fe388da4f5275845969fb544fcce38c955af28999495fce",
     "chapters/07-ansvar-for-information.md": "0c2d33d279c11cba6dcf7cf9c2abb3342d03d261e541af30a71b17eacfbcb18d",
     "chapters/08-utvecklingsmiljoer.md": "d48f836db47b83e4172f9e483fe2f925f74951cb867dd8f85372890cbba4ae4a",
@@ -83,7 +83,7 @@
     "docs/samlad-referenskontroll-revision-55.md": "84fa5cfee1f9b9610a8be101ddc604b1cff79eca85abeab6fea00ac8f1018b10",
     "docs/slutgranskning-publicering-2026-10-17.md": "6baf9f95c4a4ba81e2d9454887169105e6b1bcdc7ffa0c333af25ae2ce67da76",
     "docs/slutkorrektur-och-provexport-revision-56.md": "c8fa509de625f425a00f6668eafac661437d82ae0118fc2985040945591a6b39",
-    "docs/slutlasning-kapitelvis-2026-10-18.md": "dda46d7eb5f1060d6539c1e2aab64e42d7797df825fed87fc0e10ccd57e59d92",
+    "docs/slutlasning-kapitelvis-2026-10-18.md": "2474f868d6834302e30a1b3a0267c613191ef08da4455faac0120d4475b2834e",
     "docs/terminologi.md": "2ebb5ee736cbf7dade016e7e6a252189f0191edb1a752c097b9d8dce737b90ba",
     "examples/README.md": "70a55086000ab162157b80abc348dab55a357b3984d1ad6baa7b52d723149916",
     "project-index.md": "21bcb913ed5e069d898c501b141e49c21b2bc5eb8e3dd5c80d911e67deed1f67",
@@ -92,7 +92,7 @@
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
     "publishing/pdf-filter.lua": "31c57369f4d0fe1993af4e3f0b4f3d8d6172d5f116e3d7480f0f075a25fd9e38",
     "publishing/pdf-template.tex": "83b34664f86cd251715c9e941953fb8476d6e43a24fa7085bcbf87baba129d84",
-    "revision-log.md": "f16af2ff7549977bfa757bc3eb8a7f2b8d3c9fdc9d400d1f5118ffd4b25a9a33",
+    "revision-log.md": "aeb636b42f200e955c09a4b1c49837dfdae7ff6e1b6ec458cb710fc480a6414b",
     "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
     "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973",
     "scripts/export-book.py": "8324321274c0e2bba820ffad9c47584d7faf381cf8447e90e848a3548303b7c0",
@@ -102,6 +102,6 @@
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7"
   },
   "chapters": {},
-  "last_operation": "Kapitelvis slutläsning: 04-hur-systemet-delas-upp.md",
+  "last_operation": "Kapitelvis slutläsning: 05-var-tjansterna-kors.md",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }

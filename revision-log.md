@@ -105,3 +105,5 @@ Revision 71 (2026-10-18): Slutläst 02-nar-systemet-delas-upp.md; 2 riktade text
 Revision 72 (2026-10-18): Slutläst 03-ansvar-i-distribuerat-system.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 73 (2026-10-18): Slutläst 04-hur-systemet-delas-upp.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 74 (2026-10-18): Slutläst 05-var-tjansterna-kors.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.

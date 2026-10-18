@@ -37,3 +37,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Granskat alternativ A–C, bounded contexts, distribuerad monolit och beslutsprovet. Riktad kontroll 2026-10-18 av R3, https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis, stöder resonemanget om verksamhetsförmågor, sammanhållning och omprövbara gränser. Dokumentversionslösningen är bokens eget förklarande exempel, inte ett citat ur källan.
 - Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 5. Var ska tjänsterna köras? – revision 74
+
+- Skilt mellan containeravbildning, körande container och tjänsteinstans; en instans kan omfatta samverkande containrar.
+- Förtydligat att beständig lagring behöver uttalat informationsansvar, inte bara teknisk lagringskapacitet.
+- Genomläst placeringsalternativ, felområden, skalning och hälsokontroller. Riktad primärkällkontroll 2026-10-18: https://kubernetes.io/docs/concepts/workloads/pods/ och R4 om probes. Den teknikneutrala framställningen och reservationerna om isolering och återställning bevaras.
+- Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

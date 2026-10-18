@@ -6,7 +6,7 @@ Den här skillnaden är central. Mikrotjänstarkitektur syftar till att göra av
 
 ## Tjänst, instans och körmiljö är tre olika saker
 
-En *tjänst* är en logisk förmåga med definierade funktioner och kontrakt. En *instans* är en körande kopia av tjänstens program. En *körmiljö* är den tekniska resurs som bär instansen, till exempel en VM, en container på en värd eller en hanterad exekveringstjänst. Samma tjänst kan ha flera instanser; en VM kan samtidigt bära flera tjänsters instanser. En container är en paketerad och isolerad körform, men container, instans och fysisk eller virtuell värd är inte utbytbara begrepp.
+En *tjänst* är en logisk förmåga med definierade funktioner och kontrakt. En *instans* är en körande kopia av tjänstens program. En *körmiljö* är den tekniska resurs som bär instansen, till exempel en VM, en container på en värd eller en hanterad exekveringstjänst. Samma tjänst kan ha flera instanser; en VM kan samtidigt bära flera tjänsters instanser. En container kör processer i en avgränsad miljö med utgångspunkt i en containeravbildning som paketerar program och beroenden. En tjänsteinstans kan bestå av en eller flera samverkande containrar. Container, tjänsteinstans och fysisk eller virtuell värd är därför inte utbytbara begrepp.
 
 I det traditionella ärendehanteringssystemet kan frontend ligga på en VM, backend på två VM:ar bakom en lastbalanserare och databasen på en särskild databasplattform. VM-indelningen följer då ungefär de tekniska lagren. När dokumenttjänsten bryts ut behöver man i stället fråga vilka krav den har på kapacitet, isolering, tillgänglighet och förvaltning. Antalet mikrotjänster bestämmer inte antalet VM:ar.
 
@@ -40,7 +40,7 @@ Automatisk skalning behöver rimliga resurströsklar, marginaler och mätvärden
 
 Att en process körs betyder inte att den kan ta emot trafik. En tjänst kan exempelvis vara igång men sakna anslutning till ett nödvändigt beroende. Plattformen behöver därför signaler som skiljer mellan att instansen lever och att den är redo att hantera nya anrop. Samtidigt måste kontroller utformas så att problem i en annan tjänst inte leder till onödiga omstarter i hela kedjan.
 
-Kortlivade instanser gör det särskilt viktigt att inte lagra oersättlig information enbart på deras lokala filsystem. Dokumenttjänstens filer behöver till exempel lagras i en beständig lagringstjänst med eget dataansvar, återställningskrav och åtkomstskydd. Detta gäller även om applikationsteamet inte självt administrerar lagringen. Beständig lagring är dock inte liktydig med backup eller verifierad återställningsförmåga; dessa behandlas senare i boken. [R4](https://kubernetes.io/docs/concepts/workloads/pods/probes/) [R5](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+Kortlivade instanser gör det särskilt viktigt att inte lagra oersättlig information enbart på deras lokala filsystem. Dokumenttjänstens filer behöver till exempel lagras i en beständig lagringstjänst med uttalat ansvar för informationen, återställningskrav och åtkomstskydd. Detta gäller även om applikationsteamet inte självt administrerar lagringen. Beständig lagring är dock inte liktydig med backup eller verifierad återställningsförmåga; dessa behandlas senare i boken. [R4](https://kubernetes.io/docs/concepts/workloads/pods/probes/) [R5](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
 ## Ansvar mellan applikation och drift
 
