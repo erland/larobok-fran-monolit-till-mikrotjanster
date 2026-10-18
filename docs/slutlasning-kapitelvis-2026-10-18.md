@@ -115,3 +115,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Riktad källkontroll 2026-10-18 mot R17 (objektspecifik auktorisation) och R18 (JWT-verifiering och mottagarkontroll). Genomläst delegering, tjänsteidentiteter, signerade länkar, skydd av kopior och säkerhetsincidenter. Inga rättsliga tidsfrister eller ogrundade efterlevnadslöften införs.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 16. Hur hanterar vi livscykler, underhåll och teknisk skuld? – revision 85
+
+- Förklarat SBOM och ersatt runtime-versioner med en svensk beskrivning av språkens körmiljöer.
+- Skilt genomförd åtgärd från bedömning av kvarstående risk i förvaltningssamtalet.
+- Genomläst samtidiga livscykler, patchningsansvar, transitiva beroenden, faktisk produktionsversion, kompatibilitet och avveckling; framställningen lovar inte att inventering eller sårbarhetsskanning ensamt ger säkerhet.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+

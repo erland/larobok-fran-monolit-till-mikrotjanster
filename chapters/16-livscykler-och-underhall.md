@@ -26,7 +26,7 @@ Förvaltningen behöver kunna svara på vilka tjänster som påverkas när en s�
 
 Informationskällorna kompletterar varandra. Tjänstekatalogen svarar på *vem och vad*; bygg- och artefaktinformationen svarar på *vilken version*; driftens observationer svarar på *vad som faktiskt körs*. Om katalogen anger en uppdaterad version men produktionsmiljön fortfarande kör den gamla är förvaltningsproblemet inte löst. Därför behöver inventering och uppföljning knytas till verkliga driftsättningar och granskas vid avvikelser.
 
-Även komponentförteckningar som en SBOM kan ge stöd, men de bevisar inte ensamma att programvaran är fri från sårbarheter. Resultaten behöver sättas i relation till hur komponenten används, om den exponerade funktionen faktiskt är nåbar och vilka skydd som finns runt tjänsten.
+En programvaruförteckning, en SBOM (Software Bill of Materials), kan ge stöd, men de bevisar inte ensamma att programvaran är fri från sårbarheter. Resultaten behöver sättas i relation till hur komponenten används, om den exponerade funktionen faktiskt är nåbar och vilka skydd som finns runt tjänsten.
 
 ## API:er och händelser lever längre än en enskild driftsättning
 
@@ -50,7 +50,7 @@ Ett team som äger en mikrotjänst behöver ha utrymme att avsätta tid för den
 
 Teknisk skuld kan bestå av otydliga tjänstegränser, manuella driftsättningar, svagt teststöd, odokumenterade beroenden och provisoriska undantag i nätverksregler eller behörigheter. En tjänst som kräver en unik och gammal körmiljö kan hindra en gemensam plattformsuppgradering. Ett nätverksundantag som skapades för en felsökning kan bli kvar tills ingen längre vet varför det finns.
 
-Det betyder att teknisk skuld inte enbart kan prioriteras av applikationsutvecklare. Drift och plattform måste kunna synliggöra kostnaden för speciallösningar, blandade runtime-versioner, avvikande övervakning eller manuella åtgärder. Säkerhetsfunktionen behöver visa vilka avvikelser som höjer risken, och verksamheten behöver förstå hur skulden påverkar leveransförmåga och kontinuitet.
+Det betyder att teknisk skuld inte enbart kan prioriteras av applikationsutvecklare. Drift och plattform måste kunna synliggöra kostnaden för speciallösningar, blandade versioner av språkens körmiljöer, avvikande övervakning eller manuella åtgärder. Säkerhetsfunktionen behöver visa vilka avvikelser som höjer risken, och verksamheten behöver förstå hur skulden påverkar leveransförmåga och kontinuitet.
 
 Ett bra beslutsunderlag beskriver *konsekvensen* av att låta skulden ligga kvar: längre ledtider för uppgraderingar, högre sårbarhet, större incidentrisk eller svårare återställning. Det är mer användbart än en lista som bara säger att något är ”gammalt”.
 
@@ -66,7 +66,7 @@ Om en plattformstjänst ska upphöra måste plattformsteamet erbjuda en fungeran
 
 Tänk dig ett kvartalsvis livscykelmöte för ärendehanteringsstödet. Dokumentteamet visar att ett bibliotek måste bytas innan stödet upphör. Driftteamet visar att den nuvarande körmiljön behöver uppgraderas. Ärendeteamet redovisar att det fortfarande använder ett äldre dokument-API. Säkerhetsfunktionen pekar på en känd sårbarhet och verksamheten informerar om en period när större förändringar bör undvikas.
 
-Mötet behöver inte detaljstyra varje uppgradering. Syftet är att identifiera beroenden och beslut som inget team kan lösa ensamt. Vem äger åtgärden? Vilken sista tidpunkt gäller? Vad händer om den missas? Vilken åtgärd måste genomföras först? Vem finansierar arbetet och vem accepterar kvarstående risk? Vilket underlag visar att risken är avklarad? Sådana frågor skapar en gemensam plan utan att återinföra en enda stor release för allt.
+Mötet behöver inte detaljstyra varje uppgradering. Syftet är att identifiera beroenden och beslut som inget team kan lösa ensamt. Vem äger åtgärden? Vilken sista tidpunkt gäller? Vad händer om den missas? Vilken åtgärd måste genomföras först? Vem finansierar arbetet och vem accepterar kvarstående risk? Vilket underlag visar att åtgärden är genomförd och att kvarstående risk är bedömd? Sådana frågor skapar en gemensam plan utan att återinföra en enda stor release för allt.
 
 **För applikationssidan** innebär livscykelansvaret att kod, bibliotek, kontrakt och datamigreringar måste kunna vidareutvecklas utan långa stopp. **För driftsidan** innebär det att operativsystem, baskomponenter, databaser och plattformstjänster behöver uppdateras med kända beroenden och stödperioder. **För den samlade systemförvaltningen** handlar det om att se när en åtgärd korsar dessa gränser och säkerställa ett beslut, en ägare och en verifierbar slutpunkt.
 

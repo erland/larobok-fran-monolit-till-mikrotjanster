@@ -3,8 +3,8 @@
   "template": false,
   "project_id": "fran-monolit-till-mikrotjanster",
   "project_slug": "fran-monolit-till-mikrotjanster",
-  "revision": 84,
-  "parent_revision": 83,
+  "revision": 85,
+  "parent_revision": 84,
   "tracked_files": {
     ".github/workflows/01-validate.yml": "b6081068ec1a095d5008f99f71e6c41fa746bc32feb974c6d2b85a02e3f3975f",
     ".github/workflows/02-build-preview.yml": "fd735ed7b0c81dcdbc5602e4e002913e1eb7a1e15cc0a7ae6bee328aa22600db",
@@ -31,7 +31,7 @@
     "chapters/13-observerbarhet.md": "f005b411297ecbce39f14f9e01aa568803fa4500d061d1c3edef75a1d2ab6d56",
     "chapters/14-incidenthantering.md": "1dde246300aa7ef970753637f00581273f5ada6ed799b5f9c4fa139ae11a68e0",
     "chapters/15-sakerhet-och-identitet.md": "3667e346a701491b81cbcc60897558418f179378a67af86a496fad5e1c85c09e",
-    "chapters/16-livscykler-och-underhall.md": "b476173359fbabcc081c62e14abcbcc46425ba33eb4a077026ad1be7c3003533",
+    "chapters/16-livscykler-och-underhall.md": "9210b05ade8191d1792ff2c381ab2e141ed989119b86429fea3227f25f1bf85b",
     "chapters/17-aterstallning-kontinuitet-kostnad.md": "5d054a62bc5b962ab519155595470826d17084cca505a74552c8ffa203df2700",
     "chapters/18-ansvar-och-styrning.md": "3f858ea56f0cd70b6ed5571369df3bbdd621136f63523747d1e00756daadc340",
     "chapters/19-gamla-och-nya-arkitekturer.md": "23e5c55ce923f44220a8cdf620c93773f288b4d8037416d0b9edacec12386f44",
@@ -83,7 +83,7 @@
     "docs/samlad-referenskontroll-revision-55.md": "84fa5cfee1f9b9610a8be101ddc604b1cff79eca85abeab6fea00ac8f1018b10",
     "docs/slutgranskning-publicering-2026-10-17.md": "6baf9f95c4a4ba81e2d9454887169105e6b1bcdc7ffa0c333af25ae2ce67da76",
     "docs/slutkorrektur-och-provexport-revision-56.md": "c8fa509de625f425a00f6668eafac661437d82ae0118fc2985040945591a6b39",
-    "docs/slutlasning-kapitelvis-2026-10-18.md": "a5aeb2f9576a57a3df78497b90af544b0bb48f5b362b0b7dab78a36a8a2bd391",
+    "docs/slutlasning-kapitelvis-2026-10-18.md": "58a0f8164176d9220595e038812c62b5ac5c38972875975082080ecac48bf024",
     "docs/terminologi.md": "2ebb5ee736cbf7dade016e7e6a252189f0191edb1a752c097b9d8dce737b90ba",
     "examples/README.md": "70a55086000ab162157b80abc348dab55a357b3984d1ad6baa7b52d723149916",
     "project-index.md": "21bcb913ed5e069d898c501b141e49c21b2bc5eb8e3dd5c80d911e67deed1f67",
@@ -92,7 +92,7 @@
     "publishing/fix-epub-after-pandoc.py": "f7226069ec67ab4df9014c205b5f64652b17897e031ac1e844bead36405c484b",
     "publishing/pdf-filter.lua": "31c57369f4d0fe1993af4e3f0b4f3d8d6172d5f116e3d7480f0f075a25fd9e38",
     "publishing/pdf-template.tex": "83b34664f86cd251715c9e941953fb8476d6e43a24fa7085bcbf87baba129d84",
-    "revision-log.md": "522e51ec65df09c04e74d973ed916b6811902c70acc2c7b9072cc8dea2a39dc8",
+    "revision-log.md": "060901af2ad17cb1d630326b0b5893d6748cfefb0f4a0c03491bfe20b075dc01",
     "scripts/book_references.py": "a47e705b2c7afbd2fbb2a45a6cadb96371742fbc421a6b94c963214f7a170f4b",
     "scripts/build_book.py": "1a9e00d2fff97e27ab6841b15fc6c37139a5a8a1a1bf04b59b3a62531f81e973",
     "scripts/export-book.py": "8324321274c0e2bba820ffad9c47584d7faf381cf8447e90e848a3548303b7c0",
@@ -102,6 +102,6 @@
     "scripts/validate_references.py": "1e82fff7721981e7145f48b766a82819204ff5d5bda560b5ecb4f69bca8a15f7"
   },
   "chapters": {},
-  "last_operation": "Kapitelvis slutläsning: 15-sakerhet-och-identitet.md",
+  "last_operation": "Kapitelvis slutläsning: 16-livscykler-och-underhall.md",
   "canonical_zip_name": "fran-monolit-till-mikrotjanster-projekt-v5.7.zip"
 }

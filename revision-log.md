@@ -127,3 +127,5 @@ Revision 82 (2026-10-18): Slutläst 13-observerbarhet.md; 2 riktade textjusterin
 Revision 83 (2026-10-18): Slutläst 14-incidenthantering.md; 4 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
 
 Revision 84 (2026-10-18): Slutläst 15-sakerhet-och-identitet.md; 2 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
+
+Revision 85 (2026-10-18): Slutläst 16-livscykler-och-underhall.md; 3 riktade textjusteringar. Se kapitelvis slutläsningsprotokoll. Övriga kapitel oförändrade i detta steg.
