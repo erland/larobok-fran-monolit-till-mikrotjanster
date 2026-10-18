@@ -16,7 +16,7 @@ En verksamhetsförmåga är inte automatiskt lika med en mikrotjänst. Den ger e
 
 En användbar tjänstegräns håller samman sådant som behöver förändras tillsammans. Om flera funktioner delar samma verksamhetsregler, ändras av samma skäl och måste upprätthålla gemensamma invarianta villkor finns det ett starkt argument för att hålla dem nära varandra.
 
-En *invariant* är ett villkor som alltid måste vara sant, till exempel att ett ärende inte får markeras som slutligt avgjort utan ett giltigt beslutsunderlag. Om underlaget kommer från en annan tjänst behöver man avgöra om regeln måste kontrolleras synkront eller kan säkras genom en verksamhetsprocess med definierade mellanlägen. Om ett sådant villkor kräver tätt samordnade ändringar i flera tjänster kan gränsen vara olämplig – eller så måste processen uttryckligen utformas för att hantera flera steg och mellanlägen. Detta är ett arkitekturval, inte bara en implementationsteknik.
+En *invariant* är ett villkor som alltid måste vara sant, till exempel att ett ärende inte får markeras som slutligt avgjort utan ett giltigt beslutsunderlag. Om underlaget kommer från en annan tjänst behöver man bestämma hur regeln ska upprätthållas. En synkron kontroll är inte ensam en garanti: underlaget kan ändras mellan kontrollen och beslutet. En möjlig lösning är att knyta beslutet till en bestämd, bevarad dokumentversion. En annan är att utforma processen med mellanlägen som inte räknas som slutligt avgjorda. Om ett sådant villkor kräver tätt samordnade ändringar i flera tjänster kan gränsen vara olämplig – eller så måste processen uttryckligen utformas för att hantera flera steg och mellanlägen. Detta är ett arkitekturval, inte bara en implementationsteknik.
 
 Domändriven design erbjuder användbara begrepp som avgränsade kontexter (*bounded contexts*). En avgränsad kontext är ett område där begrepp och regler har en konsekvent betydelse. Den kan hjälpa till att identifiera tjänstegränser, men en kontext kan realiseras av en eller flera tjänster; den behöver inte vara ett driftsatt program i sig.
 
@@ -26,7 +26,7 @@ Tjänstegränsen behöver också ha en rimlig koppling till ett team eller en ty
 
 Anta att verksamheten vill kunna vidareutveckla dokumentstödet oberoende av ärendehanteringen. Det finns minst tre rimliga lösningar:
 
-**Alternativ A: Behåll dokumenthanteringen som modul i monoliten.** Ärende- och dokumentfunktionerna ligger kvar i samma driftsatta applikation men får tydligare interna gränssnitt och ägarskap. En förändring behöver inte passera ett nätverk och transaktioner kan i vissa fall hållas lokala. Däremot är leveranscykeln fortfarande gemensam om applikationen driftsätts som en enhet. Detta är ofta en bra start när oberoende driftsättning ännu inte ger tillräckligt värde.
+**Alternativ A: Behåll dokumenthanteringen som modul i monoliten.** Ärende- och dokumentfunktionerna ligger kvar i samma driftsatta applikation men får tydligare interna gränssnitt och ägarskap. Anrop mellan modulerna kan ske inom samma process och transaktioner kan i vissa fall hållas inom samma databas. Däremot är leveranscykeln fortfarande gemensam om applikationen driftsätts som en enhet. Detta är ofta en bra start när oberoende driftsättning ännu inte ger tillräckligt värde.
 
 **Alternativ B: Bryt ut en sammanhållen dokumenttjänst.** En tjänst får ansvar för dokumentmetadata, dokumentregler och ett väldefinierat kontrakt mot ärendehanteringen. Själva filinnehållet kan lagras i en gemensamt tillhandahållen objektlagring utan att dokumenttjänsten förlorar sitt informationsansvar. Den kan utvecklas och driftsättas separat, förutsatt att kontrakt och dataägarskap tillåter det. Men en ny nätverksgräns införs, liksom nya krav på hantering av otillgänglighet, loggning och behörighet.
 
@@ -58,7 +58,7 @@ En alltför fin uppdelning kan också skapa många certifikat, nätverksflöden,
 
 ## Vem fattar beslutet?
 
-Verksamhetsföreträdare kan beskriva vilka förmågor som behöver utvecklas oberoende och vilka krav som är kritiska. Applikationsarkitekter och utvecklingsteam analyserar verksamhetsregler, data, samspel och förändringsmönster. Drift- och plattformsfunktioner bidrar med konsekvenser för kapacitet, isolering, observabilitet, nätverk och driftkostnad. Säkerhetsfunktionen granskar skyddsbehov och tillitsgränser.
+Verksamhetsföreträdare kan beskriva vilka förmågor som behöver utvecklas oberoende och vilka krav som är kritiska. Applikationsarkitekter och utvecklingsteam analyserar verksamhetsregler, data, samspel och förändringsmönster. Drift- och plattformsfunktioner bidrar med konsekvenser för kapacitet, isolering, observerbarhet, nätverk och driftkostnad. Säkerhetsfunktionen granskar skyddsbehov och tillitsgränser.
 
 Beslutsmandatet behöver vara uttalat. Det kan ligga hos en ansvarig arkitekt, en produktorganisation eller ett gemensamt arkitekturforum, beroende på styrmodellen. Oavsett modell bör berörda parter förstå avvägningarna och någon ha mandat att väga helhetens kostnader mot de enskilda teamens frihet.
 

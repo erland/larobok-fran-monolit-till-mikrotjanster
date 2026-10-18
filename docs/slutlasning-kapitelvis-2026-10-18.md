@@ -30,3 +30,10 @@ Underlag: main vid `3858f436db79e63d2b3cd62376d510162cb8f2da`, projektrevision 6
 - Genomläst samtliga fyra ansvarsnivåer, fem ansvarsfrågor och ansvarstabellen; mandat, kontroll och skillnaden mot kapitel 18 är tydligt avgränsade.
 - Utfall: genomläst; 2 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
 
+## 4. Hur ska systemet delas upp? – revision 73
+
+- Preciserat invariantscenariot: en synkron kontroll skyddar inte ensam mot att underlaget ändras före beslutet; dokumentversion och uttryckliga mellanlägen konkretiserar avvägningen.
+- Rättat formuleringen om interna modulanrop och använt observerbarhet konsekvent.
+- Granskat alternativ A–C, bounded contexts, distribuerad monolit och beslutsprovet. Riktad kontroll 2026-10-18 av R3, https://learn.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis, stöder resonemanget om verksamhetsförmågor, sammanhållning och omprövbara gränser. Dokumentversionslösningen är bokens eget förklarande exempel, inte ett citat ur källan.
+- Utfall: genomläst; 3 riktade textjusteringar. Befintliga käll-ID och kapitelavgränsning bevarade.
+
